@@ -16,11 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/', function () {
-    return view('beken/test');
+    return view('beken/123');
 });
 
-Route::get('/', function () {
-    return view('beken/test1213');
-});
 
 
