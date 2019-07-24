@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('beken/dashboard');
 });
+
+Route::get('/', function () {
+    return view('beken/test');
+});
+
+Route::get('/', function () {
+    return view('beken/test1213');
+});
+
+
