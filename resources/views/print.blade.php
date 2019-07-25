@@ -12,13 +12,13 @@
 <body>
     @foreach($label as $label)
         <!-- do something here | divs -->
-        <table>
+        {{-- <table>
             <tr>
                 <td>
                     <img src="{{asset('logo.png')}}">
                 </td>
             </tr>
-        </table>
+        </table> --}}
         <h1>{{ $title }}</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

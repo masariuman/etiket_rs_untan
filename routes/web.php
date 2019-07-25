@@ -16,3 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('print','PrintController@generatePDF');
+
+
+Route::get('templet', function () {
+    return view('print');
+});
