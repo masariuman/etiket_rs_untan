@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('beken/dashboard');
 });
+
+Route::get('print','PrintController@generatePDF');
