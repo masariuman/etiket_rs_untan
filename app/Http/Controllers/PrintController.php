@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use PDF;
+use App\Label;
 
 class PrintController extends Controller
 {
@@ -80,5 +82,19 @@ class PrintController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+
+    public function generatePDF()
+
+    {
+        $label = Label::all();
+        $data = ['title' => 'Welcome to belajarphp.net'];
+        $data['label'] = $label;
+
+        $pdf = PDF::loadView('print', $data);
+        return $pdf->stream();
+        // return $pdf->download('laporan-pdf.pdf');
     }
 }
