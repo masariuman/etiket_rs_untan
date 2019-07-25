@@ -12,6 +12,6 @@ class labels extends Seeder
     public function run()
     {
         //
-        factory(\App\Label::class, 10)->create();
+        factory(App\Label::class, 10)->create();
     }
 }
