@@ -5,10 +5,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{asset('tenpureto/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+          <img src="{{asset('tenpureto/dist/img/Untan.png')}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Arif Setiawan</p>
+          <p>Farmasi RSUNTAN</p>
           <a href="#"><i class="fa fa-circle text-success"></i> ADMIN</a>
         </div>
       </div>
@@ -26,12 +26,27 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="{{ Request::is('manage/dashboard') ? 'active' : '' }}">
-          <a href="/manage/dashboard">
-            <i class="fa fa-dashboard"></i> <span>Beranda</span>
+        <li class="{{ Request::is('beken/dashboard') ? 'active' : '' }}">
+          <a href="/">
+            <i class="fa fa-dashboard text-aqua"></i> <span>Beranda</span>
           </a>
         </li>
-        <li class="treeview {{ Request::is('manage/karyawan') ? 'active' : '' }} {{ Request::is('manage/karyawan/new') ? 'active' : '' }} {{ Request::is('manage/karyawan/edit') ? 'active' : '' }}">
+        <li class="{{ Request::is('beken/label') ? 'active' : '' }}">
+          <a href="/label">
+            <i class="fa fa-ticket text-yellow"></i> <span>Label</span>
+          </a>
+        </li>
+        <li class="{{ Request::is('beken/tambahobat') ? 'active' : '' }}">
+          <a href="/obat">
+            <i class="fa fa-plus-square text-red"></i> <span>Tambah Obat</span>
+          </a>
+        </li>
+        <li class="{{ Request::is('beken/stokobat') ? 'active' : '' }}">
+          <a href="/stok">
+            <i class="fa fa-cubes text-green"></i> <span>Stok Obat</span>
+          </a>
+        </li>
+        <!-- <li class="treeview {{ Request::is('manage/karyawan') ? 'active' : '' }} {{ Request::is('manage/karyawan/new') ? 'active' : '' }} {{ Request::is('manage/karyawan/edit') ? 'active' : '' }}">
           <a href="#">
             <i class="fa fa-users"></i> <span>Karyawan</span>
             <span class="pull-right-container">
@@ -64,11 +79,11 @@
           <a href="/manage/pengumuman">
             <i class="fa fa-bullhorn"></i> <span>Pengumuman</span>
           </a>
-        </li>
-        <li class="header">PENGATURAN</li>
+        </li> -->
+        <!-- <li class="header">PENGATURAN</li>
         <li class="{{ Request::is('manage/periode') ? 'active' : '' }} {{ Request::is('manage/periode/new') ? 'active' : '' }} {{ Request::is('manage/periode/edit') ? 'active' : '' }}"><a href="/manage/periode"><i class="fa fa-calendar text-aqua"></i> <span>Periode</span></a></li>
         <li class="{{ Request::is('manage/kelas') ? 'active' : '' }} {{ Request::is('manage/kelas/new') ? 'active' : '' }} {{ Request::is('manage/kelas/edit') ? 'active' : '' }}"><a href="/manage/kelas"><i class="fa fa-institution text-yellow"></i> <span>Kelas</span></a></li>
-        <li class="{{ Request::is('manage/mapel') ? 'active' : '' }} {{ Request::is('manage/mapel/new') ? 'active' : '' }} {{ Request::is('manage/mapel/edit') ? 'active' : '' }}"><a href="/manage/mapel"><i class="fa fa-book text-green"></i> <span>Mapel</span></a></li>
+        <li class="{{ Request::is('manage/mapel') ? 'active' : '' }} {{ Request::is('manage/mapel/new') ? 'active' : '' }} {{ Request::is('manage/mapel/edit') ? 'active' : '' }}"><a href="/manage/mapel"><i class="fa fa-book text-green"></i> <span>Mapel</span></a></li> -->
       </ul>
     </section>
     <!-- /.sidebar -->

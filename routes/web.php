@@ -15,9 +15,18 @@ Route::get('/', function () {
     return view('beken/dashboard');
 });
 
-Route::get('/', function () {
-    return view('beken/123');
+Route::get('label', function () {
+    return view('beken/label');
 });
 
+Route::get('obat', function () {
+    return view('beken/obat');
+});
+
+Route::get('stok', function () {
+    return view('beken/stok');
+});
+
+Route::get('etiket', 'EtiketController@index');
 
 
