@@ -22,35 +22,6 @@
 @section('main')
 <!-- Small boxes (Stat box) -->
 <div class="row">
-    <!-- ./col -->
-    <div class="col-lg-6 col-xs-6">
-      <!-- small box -->
-      <div class="small-box bg-green">
-        <div class="inner">
-          <h3>1</h3>
-
-          <p>Jumlah Karyawan</p>
-        </div>
-        <div class="icon">
-          <i class="fa fa-users"></i>
-        </div>
-      </div>
-    </div>
-    <!-- ./col -->
-    <div class="col-lg-6 col-xs-6">
-      <!-- small box -->
-      <div class="small-box bg-yellow">
-        <div class="inner">
-          <h3>1</h3>
-
-          <p>Jumlah Siswa</p>
-        </div>
-        <div class="icon">
-          <i class="fa fa-male"></i>
-        </div>
-      </div>
-    </div>
-    <!-- ./col -->
   </div>
   <!-- Main row -->
   <div class="row">
@@ -58,6 +29,10 @@
     <section class="content" >
         <div class="box box-default">
         <div class="box">
+                <br>
+                <div class="box-header" style="text-align:center;">
+                  <h3 class="box-title" style="font-size:30px;"><b>CETAK LABEL OBAT</b></h3>
+                </div>
             <br>
         <!-- /.box-header -->
       </div>
