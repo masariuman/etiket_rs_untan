@@ -12,20 +12,67 @@
 <body>
     @foreach($label as $label)
         <!-- do something here | divs -->
-        {{-- <table>
+        <table border="0" align="center" style="margin:auto; width:50%;">
             <tr>
-                <td>
-                    <img src="{{asset('logo.png')}}">
+                <td style="text-align:right; width:20%;">
+                    <img src="{{asset('logo.png')}}" style="width:80%;">
+                </td>
+                <td style="text-align:center;" colspan="3">
+                    <h2 style="text-align:center;margin:0;">INSTALASI FARMASI RUMAH SAKIT <br /> UNIVERSITAS TANJUNGPURA</h2>
+                    <span style="text-align:center">Jl. Prof.Dr.Hadari Nawawi Pontianak 78124 <br />
+                    Telp. 765324 </br>
+                    Dede Robianto, S.Far., Apt.</span>
                 </td>
             </tr>
-        </table> --}}
-        <h1>{{ $title }}</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <tr>
+                <td style="" colspan="4">
+                    <hr />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    No RM
+                </td>
+                <td>
+                    :
+                </td>
+                <td>{{$label->mr}}</td>
+                <td style="text-align:right;">Tgl : {{$today}}</td>
+            </tr>
+            <tr>
+                <td>
+                    Nama Pasien
+                </td>
+                <td>
+                    :
+                </td>
+                <td>{{$label->nama}}</td>
+            </tr>
+            <tr>
+                <td>
+                    Nama Obat
+                </td>
+                <td>
+                    :
+                </td>
+                <td>{{$label->obat}}</td>
+            </tr>
+            <tr>
+                <td>
+                    Indikasi Obat
+                </td>
+                <td>
+                    :
+                </td>
+                <td>{{$label->indikasi}}</td>
+            </tr>
+            <tr>
+                <td>
+                    Rute Pemberian
+                </td>
+            </tr>
+        </table>
+
 
         <div class="page-break"></div>
     @endforeach

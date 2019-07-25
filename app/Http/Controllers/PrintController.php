@@ -97,4 +97,19 @@ class PrintController extends Controller
         return $pdf->stream();
         // return $pdf->download('laporan-pdf.pdf');
     }
+
+
+    public function templet()
+
+    {
+        $label = Label::all();
+        $data = ['title' => 'Welcome to belajarphp.net'];
+        $data['label'] = $label;
+        $data['today'] = date('d/m/Y');
+
+        $pdf = PDF::loadView('print', $data);
+        // return $pdf->stream();
+        return view('print', $data);
+        // return $pdf->download('laporan-pdf.pdf');
+    }
 }
