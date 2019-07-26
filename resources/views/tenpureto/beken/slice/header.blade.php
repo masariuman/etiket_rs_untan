@@ -1,6 +1,6 @@
 <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="/" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>E</b>TKT</span>
       <!-- logo for regular state and mobile devices -->
@@ -215,16 +215,16 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{asset('tenpureto/dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
-              <span class="hidden-xs">Arif Setiawan</span>
+              <img src="{{asset('tenpureto/dist/img/Untan.png')}}" class="user-image" alt="User Image">
+              <span class="hidden-xs">Farmasi RSUNTAN</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="{{asset('tenpureto/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+                <img src="{{asset('tenpureto/dist/img/Untan.png')}}" class="img-circle" alt="User Image">
 
                 <p>
-                  Arif Setiawan | WEB DEVELOPER
+                  FARMASI RSUNTAN | Etiket
                   <small>Member since Jun. 2019</small>
                 </p>
               </li>

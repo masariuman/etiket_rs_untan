@@ -15,6 +15,21 @@ Route::get('/', function () {
     return view('beken/dashboard');
 });
 
+Route::get('label', function () {
+    return view('beken/label');
+});
+
+Route::get('obat', function () {
+    return view('beken/obat');
+});
+
+Route::get('stok', function () {
+    return view('beken/stok');
+});
+
+Route::get('etiket', 'EtiketController@index');
+
+
 Route::get('print','PrintController@generatePDF');
 
 
