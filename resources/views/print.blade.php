@@ -121,7 +121,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="aturan" colspan="5" style="text-align:center;padding-top:15px;">
+                <td class="aturan" colspan="5" style="text-align:center;padding-top:10px;">
                     <i>SEMOGA LEKAS SEMBUH</i>
                 </td>
             </tr>
