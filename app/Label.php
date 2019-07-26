@@ -18,6 +18,9 @@ class Label extends Model
         'aturan_pakai2',
         'aturan_pakai3',
         'sebelum_sesudah',
+        'rute_pemberian',
+        'maksimal',
+        'ed',
         'jumlah',
         'bentukobat',
         'nomor_urut_input'

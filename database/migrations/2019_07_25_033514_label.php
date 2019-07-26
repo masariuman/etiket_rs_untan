@@ -22,7 +22,10 @@ class Label extends Migration
             $table->string('aturan_pakai');
             $table->string('aturan_pakai2');
             $table->string('aturan_pakai3');
+            $table->string('rute_pemberian');
             $table->string('sebelum_sesudah');
+            $table->string('maksimal');
+            $table->date('ed');
             $table->integer('jumlah');
             $table->string('bentukobat');
             $table->integer('nomor_urut_input');
