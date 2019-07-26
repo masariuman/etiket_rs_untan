@@ -6,6 +6,13 @@
         .page-break {
             page-break-after: always;
         }
+        .aturan {
+            font-size:30px;
+            font-weight:bold;
+        }
+        .kanan {
+            width: 20%;
+        }
     </style>
 </head>
 
@@ -37,7 +44,7 @@
                     :
                 </td>
                 <td>{{$label->mr}}</td>
-                <td style="text-align:right;">Tgl : {{$today}}</td>
+                <td class="kanan">Tgl : {{$today}}</td>
             </tr>
             <tr>
                 <td>
@@ -69,6 +76,41 @@
             <tr>
                 <td>
                     Rute Pemberian
+                </td>
+                <td>
+                    :
+                </td>
+                <td>ROUTE ?</td>
+            </tr>
+            <tr>
+                <td class="aturan" colspan="4">
+                    {{$label->aturan_pakai}} x Sehari {{$label->aturan_pakai2}} {{$label->bentukobat}}
+                </td>
+            </tr>
+            <tr>
+                <td class="aturan" colspan="4">
+                    {{$label->sebelum_sesudah}}
+                </td>
+            </tr>
+            <tr>
+                <td class="aturan" colspan="3">
+                    {{$label->maksimal}}
+                </td>
+                <td>
+                    ED : {{$label->ed}}
+                </td>
+            </tr>
+            <tr>
+                <td class="aturan" colspan="3">
+                    {{$label->aturan_pakai3}}
+                </td>
+                <td>
+                    Jumlah : {{$label->jumlah}}
+                </td>
+            </tr>
+            <tr>
+                <td class="aturan" colspan="4" style="text-align:center;">
+                    <i>SEMOGA LEKAS SEMBUH</i>
                 </td>
             </tr>
         </table>

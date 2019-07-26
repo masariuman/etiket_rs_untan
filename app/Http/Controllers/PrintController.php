@@ -90,7 +90,7 @@ class PrintController extends Controller
 
     {
         $label = Label::all();
-        $data = ['title' => 'Welcome to belajarphp.net'];
+        // $data = ['title' => 'Welcome to belajarphp.net'];
         $data['label'] = $label;
         $data['today'] = date('d/m/Y');
 
