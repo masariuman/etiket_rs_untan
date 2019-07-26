@@ -30,3 +30,7 @@ Route::get('stok', function () {
 Route::get('etiket', 'EtiketController@index');
 
 
+Route::get('print','PrintController@generatePDF');
+
+
+Route::get('templet','PrintController@templet');

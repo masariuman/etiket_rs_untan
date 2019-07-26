@@ -85,6 +85,26 @@
       </div>
       <!-- /.row -->
    
+  </div>
+  <!-- Main row -->
+  <div class="row">
+    <!-- Left col -->
+    <section class="content" >
+        <div class="box box-default">
+        <div class="box">
+                <br>
+                <div class="box-header" style="text-align:center;">
+                  <h3 class="box-title" style="font-size:30px;"><b>CETAK LABEL OBAT</b></h3>
+                </div>
+            <br>
+        <!-- /.box-header -->
+      </div>
+      <!-- /.box -->
+      test
+        </div>
+    </section>
+    <!-- right col -->
+  </div>
 @endsection
 
 @push('js')
