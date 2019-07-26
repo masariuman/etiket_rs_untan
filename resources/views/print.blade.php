@@ -41,9 +41,10 @@
                 </td>
                 <td style="text-align:center;padding-bottom:3px;" colspan="4" style="width:70px;">
                     <h2 style="text-align:center;margin:0;font-size:9px;">INSTALASI FARMASI RUMAH SAKIT <br /> UNIVERSITAS TANJUNGPURA</h2>
-                    <span style="text-align:center;font-size:9px;">Jl. Prof.Dr.Hadari Nawawi Pontianak 78124 <br />
-                    Telp. 765324 </br>
-                    Dede Robianto, S.Far., Apt.</span>
+                    <span style="text-align:center;font-size:7px;">Jl. Prof.Dr.Hadari Nawawi Pontianak 78124
+                    Telp. 765324 <br/>
+                    Dede Robianto, S.Far., Apt. <br/>
+                    No. SIPA : 19880711/SIPA_6171/2013/2054</span>
                 </td>
                 {{-- <td></td> --}}
             </tr>
