@@ -7,7 +7,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <meta name="description" content="Panel Admin">
-  <meta name="author" content="Arif Setiawan|MasariuMan">
+  <meta name="author" content="Farmasi RSUNTAN|Etiket">
   <meta name="robots" content="noindex, nofollow">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   @include('tenpureto.beken.slice.css')

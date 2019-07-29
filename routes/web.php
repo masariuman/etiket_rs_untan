@@ -34,3 +34,10 @@ Route::get('print','PrintController@generatePDF');
 
 
 Route::get('templet','PrintController@templet');
+
+
+Route::get('obat', 'ObatController@dataObat');
+
+Route::post('tambahObat', 'ObatController@tambahObat')->name('tambahObat');
+
+Route::get('stok', 'ObatController@stokObat');
