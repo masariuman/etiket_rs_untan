@@ -34,8 +34,8 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <form role="form" method="post" action="tambahObat">
-              {{ csrf_field() }}
+              <form role="form" method="post" action="{{route('tambahObat')}}">
+              {{csrf_field()}}
                 <!-- text input -->
                 <div class="form-group">
                   <label>Nama Obat</label>
@@ -69,6 +69,7 @@
                   <th>No</th>
                   <th>Nama Obat</th>
                   <th>Stok Obat</th>
+                  <th>Option</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -77,6 +78,9 @@
                   <td>{{ ++$key }}</td>
                   <td>{{ $obat->nama_obat}}</td>
                   <td>{{ $obat->stok }}</td>
+                  <td><a href="/obat"><div class="col-md-4 col-sm-4"><i class="fa fa-fw fa-edit text-green"></i>Edit</div></a>
+                      <div class="col-md-4 col-sm-4"><a href="/stok"><i class="fa fa-fw fa-trash text-red"></i>Hapus</a></div>
+                  </td>
                 </tr>
                 @endforeach
                 </tbody>

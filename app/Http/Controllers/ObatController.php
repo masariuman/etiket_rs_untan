@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Obat;
 use DB;
 
+
 class ObatController extends Controller
 {
     public function dataObat() {
@@ -23,10 +24,28 @@ class ObatController extends Controller
             'stok' => $request->stok,
         ]);
 
-        // $tambahObat->save();
-
-        return $tambahObat;
+     return back();
     }
+
+    public function editObat(Request $request, $id) {
+
+        $editObat = DB::table('obat')->where('id', $id)->update([
+            'nama_obat' => $request->nama_obat,
+            'stok' => $request->stok,
+        ]);
+
+     return back();
+    }
+
+    public function hapusObat(Request $request, $id) {
+
+       $hapusObat = DB::table('obat')
+       ->where('id', $id)
+       ->delete();
+
+       return back();
+    }
+
 
     public function stokObat() {
         

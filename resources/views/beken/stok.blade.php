@@ -40,6 +40,7 @@
                   <th>No</th>
                   <th>Nama Obat</th>
                   <th>Stok Obat</th>
+                  <th>Option</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -48,6 +49,7 @@
                   <td>{{ ++$key }}</td>
                   <td>{{ $obat->nama_obat}}</td>
                   <td>{{ $obat->stok }}</td>
+                  <td>Option</td>
                 </tr>
                 @endforeach
                 </tbody>
