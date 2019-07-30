@@ -32,13 +32,15 @@ Route::get('print','PrintController@generatePDF');
 
 Route::get('templet','PrintController@templet');
 
-Route::get('stok', 'ObatController@stokObat');
+// Route::get('stok', 'ObatController@stokObat');
 
-Route::get('obat', 'ObatController@dataObat');
-
+Route::get('obat', 'ObatController@dataObat')->name('label');
 Route::post('tambah_obat', 'ObatController@tambahObat')->name('tambahObat');
 Route::post('edit_obat/{id}', 'ObatController@editObat')->name('editObat');
 Route::post('hapus_obat/{id}', 'ObatControlker@hapusObat')->name('hapusObat');
 
+
+Route::get('label', 'LabelController@index')->name('label');
 Route::post('tambah_label', 'LabelController@tambahLabel')->name('tambahLabel');
+
 

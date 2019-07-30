@@ -26,7 +26,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="{{ Request::is('beken/dashboard') ? 'active' : '' }}">
+        <li class="{{ Request::is('bedashboard') ? 'active' : '' }}">
           <a href="/">
             <i class="fa fa-dashboard text-aqua"></i> <span>Beranda</span>
           </a>
@@ -36,14 +36,34 @@
             <i class="fa fa-ticket text-yellow"></i> <span>Label</span>
           </a>
         </li>
-        <li class="{{ Request::is('beken/tambahobat') ? 'active' : '' }}">
+        <li class="{{ Request::is('beken/obat') ? 'active' : '' }}">
           <a href="/obat">
-            <i class="fa fa-plus-square text-red"></i> <span>Tambah Obat</span>
+            <i class="fa fa-cubes text-green"></i> <span>Obat</span>
           </a>
         </li>
-        <li class="{{ Request::is('beken/stokobat') ? 'active' : '' }}">
+        <li class="{{ Request::is('beken/rutepemberian') ? 'active' : '' }}">
           <a href="/stok">
-            <i class="fa fa-cubes text-green"></i> <span>Stok Obat</span>
+            <i class="fa fa-cubes text-green"></i> <span>Rute Pemberian</span>
+          </a>
+        </li>
+        <li class="{{ Request::is('beken/satuanobat') ? 'active' : '' }}">
+          <a href="/stok">
+            <i class="fa fa-cubes text-green"></i> <span>Satuan Obat</span>
+          </a>
+        </li>
+        <li class="{{ Request::is('beken/perjam') ? 'active' : '' }}">
+          <a href="/stok">
+            <i class="fa fa-cubes text-green"></i> <span>Per Jam</span>
+          </a>
+        </li>
+        <li class="{{ Request::is('beken/maxpemberian') ? 'active' : '' }}">
+          <a href="/stok">
+            <i class="fa fa-cubes text-green"></i> <span>Max Pemberian</span>
+          </a>
+        </li>
+        <li class="{{ Request::is('beken/aturanminum') ? 'active' : '' }}">
+          <a href="/stok">
+            <i class="fa fa-cubes text-green"></i> <span>Aturan Minum</span>
           </a>
         </li>
         <!-- <li class="treeview {{ Request::is('manage/karyawan') ? 'active' : '' }} {{ Request::is('manage/karyawan/new') ? 'active' : '' }} {{ Request::is('manage/karyawan/edit') ? 'active' : '' }}">

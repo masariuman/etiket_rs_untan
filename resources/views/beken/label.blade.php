@@ -85,9 +85,9 @@
                 <div class="form-group">
                   <label>Nama Obat/Dosis :</label>
                   <select name="obat" class="form-control" placeholder="Nama Obat ...">
-                  <option>Paracetamol</option>
-                  <option>Sirup Anak</option>
-                  <option>Antibiotik</option>
+                  @foreach($obats as $obat)
+                  <option>{{ $obat->nama_obat }}</option>
+                  @endforeach
                  </select>
                 </div>  
                 </div>  
@@ -183,7 +183,7 @@
                   <option>Bungkus</option>
                   <option>Unit</option>
                  </select>
-                </div>  
+                </div> 
                 </div>  
 
               </div><!-- row --> 
