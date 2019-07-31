@@ -140,10 +140,10 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label>Rute Pemberian :</label>
-                  <select name="rute_pemberian" class="form-control" placeholder="Nama Obat/Dosis ...">
-                  <option>Hisap</option>
-                  <option>Tablet</option>
-                  <option>Bungkus</option>
+                  <select name="rute_pemberian" class="form-control" placeholder="Rute Pemberian ...">
+                  @foreach($rutepemberians as $rutepemberian)
+                  <option>{{ $rutepemberian->nama_rute_pemberian }}</option>
+                  @endforeach
                  </select>
                 </div>  
               </div> 
@@ -179,9 +179,9 @@
                 <div class="form-group">
                   <label>Satuan Obat :</label>
                   <select name="bentukobat" class="form-control" placeholder="Satuan Obat ...">
-                  <option>Oles</option>
-                  <option>Bungkus</option>
-                  <option>Unit</option>
+                  @foreach($satuanobats as $satuanobat)
+                  <option>{{$satuanobat->nama_satuan_obat}}</option>
+                  @endforeach          
                  </select>
                 </div> 
                 </div>  

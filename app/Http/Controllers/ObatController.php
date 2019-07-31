@@ -3,15 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Obat;
-use DB;
 
 
 class ObatController extends Controller
 {
     public function dataObat() {
         
-        $obats = DB::table('obat')->get();
+        $obats = \DB::table('obat')->get();
 
         return view('beken.obat', compact('obats'));
     }
@@ -19,7 +17,7 @@ class ObatController extends Controller
 
     public function tambahObat(Request $request) {
 
-        $tambahObat = DB::table('obat')->insert([
+        $tambahObat = \DB::table('obat')->insert([
             'nama_obat' => $request->nama_obat,
             'stok' => $request->stok,
         ]);
@@ -29,7 +27,7 @@ class ObatController extends Controller
 
     public function editObat(Request $request, $id) {
 
-        $editObat = DB::table('obat')->where('id', $id)->update([
+        $editObat = \DB::table('obat')->where('id', $id)->update([
             'nama_obat' => $request->nama_obat,
             'stok' => $request->stok,
         ]);
@@ -39,7 +37,7 @@ class ObatController extends Controller
 
     public function hapusObat(Request $request, $id) {
 
-       $hapusObat = DB::table('obat')
+       $hapusObat = \DB::table('obat')
        ->where('id', $id)
        ->delete();
 
@@ -49,7 +47,7 @@ class ObatController extends Controller
 
     public function stokObat() {
         
-        $obats = DB::table('obat')->get();
+        $obats = \DB::table('obat')->get();
 
         return view('beken.stok', compact('obats'));
     }

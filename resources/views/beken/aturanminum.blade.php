@@ -73,7 +73,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($obats as $key => $obat)
+                <!-- @foreach($obats as $key => $obat)
                 <tr>
                   <td>{{ ++$key }}</td>
                   <td>{{ $obat->nama_obat}}</td>
@@ -82,7 +82,7 @@
                       <div class="col-md-4 col-sm-4"><a href="/stok"><i class="fa fa-fw fa-trash text-red"></i>Hapus</a></div>
                   </td>
                 </tr>
-                @endforeach
+                @endforeach -->
                 </tbody>
               </table>
             </div>

@@ -1,19 +1,19 @@
 @extends('tenpureto.beken.index')
 
 @section('seo-title')
-	Obat
+	Satuan Obat
 @endsection
 
 @section('title')
   <h1>
-    Obat
+  Satuan Obat
     <small>Farmasi</small>
   </h1>
 @endsection
 
 @section('breadcrumb')
   <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-  <li class="active">Obat</li>
+  <li class="active">Satuan Obat</li>
 @endsection
 
 @push('css')
@@ -30,20 +30,16 @@
           <!-- general form elements disabled -->
           <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Tambah Obat</h3>
+              <h3 class="box-title">Satuan Obat</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <form role="form" method="post" action="{{route('tambahObat')}}">
+              <form role="form" method="post" action="{{route('tambahSatuanObat')}}">
               {{csrf_field()}}
                 <!-- text input -->
                 <div class="form-group">
-                  <label>Nama Obat</label>
-                  <input type="text" name="nama_obat" class="form-control" placeholder="Nama Obat ...">
-                </div>
-                <div class="form-group">
-                  <label>Stok Obat</label>
-                  <input type="number" name="stok" class="form-control" placeholder="Stok Obat ...">
+                  <label>Satuan Obat</label>
+                  <input type="text" name="nama_satuan_obat" class="form-control" placeholder="Satuan Obat ...">
                 </div>
             </div>
             <!-- /.box-body -->
@@ -59,7 +55,7 @@
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Data Obat</h3>
+              <h3 class="box-title">Data Satuan Obat</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -67,17 +63,15 @@
                 <thead>
                 <tr>
                   <th>No</th>
-                  <th>Nama Obat</th>
-                  <th>Stok Obat</th>
+                  <th>Satuan Obat</th>
                   <th>Option</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($obats as $key => $obat)
+                @foreach($satuanobats as $key => $satuanobat)
                 <tr>
                   <td>{{ ++$key }}</td>
-                  <td>{{ $obat->nama_obat}}</td>
-                  <td>{{ $obat->stok }}</td>
+                  <td>{{ $satuanobat->nama_satuan_obat}}</td>
                   <td><a href="/obat"><div class="col-md-4 col-sm-4"><i class="fa fa-fw fa-edit text-green"></i>Edit</div></a>
                       <div class="col-md-4 col-sm-4"><a href="/stok"><i class="fa fa-fw fa-trash text-red"></i>Hapus</a></div>
                   </td>

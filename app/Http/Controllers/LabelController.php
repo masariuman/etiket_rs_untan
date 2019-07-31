@@ -8,17 +8,18 @@ use Carbon\Carbon;
 
 class LabelController extends Controller
 {
-    public function index() {
+    public function dataLabel() {
 
         $obats = \DB::table('obat')->get();
+        $rutepemberians = \DB::table('rute_pemberian')->get();
+        $satuanobats = \DB::table('satuan_obat')->get();
 
-        return view('beken.label', compact('obats'));
+        return view('beken.label', compact('obats', 'rutepemberians', 'satuanobats'));
 
     }
 
     public function tambahLabel(Request $request) {
 
-        // $mr = \DB::table('labels')->where('mr')->first();
 
         $tambahLabel = \DB::table('labels')->insert([
             'mr' => $request->mr,

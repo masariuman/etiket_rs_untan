@@ -32,37 +32,37 @@
           </a>
         </li>
         <li class="{{ Request::is('beken/label') ? 'active' : '' }}">
-          <a href="/label">
+          <a href="{{ route('label') }}">
             <i class="fa fa-ticket text-yellow"></i> <span>Label</span>
           </a>
         </li>
         <li class="{{ Request::is('beken/obat') ? 'active' : '' }}">
-          <a href="/obat">
+          <a href="{{ route('obat') }}">
             <i class="fa fa-cubes text-green"></i> <span>Obat</span>
           </a>
         </li>
         <li class="{{ Request::is('beken/rutepemberian') ? 'active' : '' }}">
-          <a href="/stok">
+          <a href="{{ route('rutePemberian') }}">
             <i class="fa fa-cubes text-green"></i> <span>Rute Pemberian</span>
           </a>
         </li>
         <li class="{{ Request::is('beken/satuanobat') ? 'active' : '' }}">
-          <a href="/stok">
+          <a href="{{ route('satuanObat') }}">
             <i class="fa fa-cubes text-green"></i> <span>Satuan Obat</span>
           </a>
         </li>
         <li class="{{ Request::is('beken/perjam') ? 'active' : '' }}">
-          <a href="/stok">
+          <a href="/perjam">
             <i class="fa fa-cubes text-green"></i> <span>Per Jam</span>
           </a>
         </li>
         <li class="{{ Request::is('beken/maxpemberian') ? 'active' : '' }}">
-          <a href="/stok">
+          <a href="/maxpemberian">
             <i class="fa fa-cubes text-green"></i> <span>Max Pemberian</span>
           </a>
         </li>
         <li class="{{ Request::is('beken/aturanminum') ? 'active' : '' }}">
-          <a href="/stok">
+          <a href="/aturanminum">
             <i class="fa fa-cubes text-green"></i> <span>Aturan Minum</span>
           </a>
         </li>
