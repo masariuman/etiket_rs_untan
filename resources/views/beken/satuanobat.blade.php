@@ -72,8 +72,8 @@
                 <tr>
                   <td>{{ ++$key }}</td>
                   <td>{{ $satuanobat->nama_satuan_obat}}</td>
-                  <td><a href="/obat"><div class="col-md-4 col-sm-4"><i class="fa fa-fw fa-edit text-green"></i>Edit</div></a>
-                      <div class="col-md-4 col-sm-4"><a href="/stok"><i class="fa fa-fw fa-trash text-red"></i>Hapus</a></div>
+                  <td><div class="col-md-5 col-sm-4"><a href="/edit"><i class="fa fa-fw fa-edit text-green"></i>Edit</a></div>
+                      <div class="col-md-5 col-sm-4"><a href="/hapus"><i class="fa fa-fw fa-trash text-red"></i>Hapus</a></div>
                   </td>
                 </tr>
                 @endforeach

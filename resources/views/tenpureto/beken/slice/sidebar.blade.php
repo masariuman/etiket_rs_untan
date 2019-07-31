@@ -31,39 +31,39 @@
             <i class="fa fa-dashboard text-aqua"></i> <span>Beranda</span>
           </a>
         </li>
-        <li class="{{ Request::is('beken/label') ? 'active' : '' }}">
+        <li class="{{ Request::is('label') ? 'active' : '' }}">
           <a href="{{ route('label') }}">
             <i class="fa fa-ticket text-yellow"></i> <span>Label</span>
           </a>
         </li>
-        <li class="{{ Request::is('beken/obat') ? 'active' : '' }}">
+        <li class="{{ Request::is('obat') ? 'active' : '' }}">
           <a href="{{ route('obat') }}">
-            <i class="fa fa-cubes text-green"></i> <span>Obat</span>
+            <i class="fa fa-medkit text-green"></i> <span>Obat</span>
           </a>
         </li>
-        <li class="{{ Request::is('beken/rutepemberian') ? 'active' : '' }}">
+        <li class="{{ Request::is('rutepemberian') ? 'active' : '' }}">
           <a href="{{ route('rutePemberian') }}">
-            <i class="fa fa-cubes text-green"></i> <span>Rute Pemberian</span>
+            <i class="fa fa-exchange text-blue"></i> <span>Rute Pemberian</span>
           </a>
         </li>
-        <li class="{{ Request::is('beken/satuanobat') ? 'active' : '' }}">
+        <li class="{{ Request::is('satuanobat') ? 'active' : '' }}">
           <a href="{{ route('satuanObat') }}">
-            <i class="fa fa-cubes text-green"></i> <span>Satuan Obat</span>
+            <i class="fa fa-cubes text-maroon"></i> <span>Satuan Obat</span>
           </a>
         </li>
-        <li class="{{ Request::is('beken/perjam') ? 'active' : '' }}">
-          <a href="/perjam">
-            <i class="fa fa-cubes text-green"></i> <span>Per Jam</span>
+        <li class="{{ Request::is('perjam') ? 'active' : '' }}">
+          <a href="{{ route('perJam') }}">
+            <i class="fa fa-clock-o text-purple"></i> <span>Per Jam</span>
           </a>
         </li>
-        <li class="{{ Request::is('beken/maxpemberian') ? 'active' : '' }}">
-          <a href="/maxpemberian">
-            <i class="fa fa-cubes text-green"></i> <span>Max Pemberian</span>
+        <li class="{{ Request::is('maxpemberian') ? 'active' : '' }}">
+          <a href="{{ route('maxPemberian') }}">
+            <i class="fa fa-arrow-up text-orange"></i> <span>Max Pemberian</span>
           </a>
         </li>
-        <li class="{{ Request::is('beken/aturanminum') ? 'active' : '' }}">
-          <a href="/aturanminum">
-            <i class="fa fa-cubes text-green"></i> <span>Aturan Minum</span>
+        <li class="{{ Request::is('aturanminum') ? 'active' : '' }}">
+          <a href="{{ route('aturanMinum') }}">
+            <i class="fa fa-info-circle text-red"></i> <span>Aturan Minum</span>
           </a>
         </li>
         <!-- <li class="treeview {{ Request::is('manage/karyawan') ? 'active' : '' }} {{ Request::is('manage/karyawan/new') ? 'active' : '' }} {{ Request::is('manage/karyawan/edit') ? 'active' : '' }}">
