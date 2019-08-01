@@ -52,14 +52,17 @@
 
 <!-- Page script -->
 <script>
-  $(function () {  
+  $(function () {
     //Date picker
-    $('#datepicker').datepicker({
-      autoclose: true,
-      format: 'yyyy-mm-dd',
-      todayHighlight:'TRUE',
-    })
-  })
+    // $('#datepicker').datepicker({
+    //   autoclose: true,
+    //   format: 'yyyy-mm-dd',
+    //   todayHighlight:'TRUE',
+    // })
+    //Date picker
+    $('.datepicker').datepicker({ format: "yyyy-mm-dd" });
+
+  });
 </script>
 
 <!-- page script -->

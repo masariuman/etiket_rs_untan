@@ -17,6 +17,11 @@
 @endsection
 
 @push('css')
+    <style>
+        .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+            border-top:0;
+        }
+    </style>
 @endpush
 
 @section('main')
@@ -40,7 +45,7 @@
 
 
               <div class="table-responsive">
-                <table class="table table-bordered" border="2" id="dynamic_field">
+                <table class="table table-borderless" border="0" id="dynamic_field">
                     <tr>
                         <td>
                             <!-- text input -->
@@ -48,7 +53,7 @@
                                 <div class="col-md-6">
                                 <div class="form-group">
                                     <label>No RM :</label>
-                                    <input type="number" name="mr[]" class="form-control" placeholder="No RM ...">
+                                    <input type="number" name="mr" class="form-control" placeholder="No RM ...">
                                 </div>
                             </div>
 
@@ -56,7 +61,7 @@
                                 <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Per Jam :</label>
-                                    <select name="aturan_pakai3[]" class="form-control" placeholder="Per Jam ...">
+                                    <select name="rows[0][aturan_pakai3]" class="form-control" placeholder="Per Jam ...">
                                     <option>Tiap 1 Jam</option>
                                     <option>Tiap 2 Jam</option>
                                     <option>Tiap 3 Jam</option>
@@ -73,7 +78,7 @@
                                 <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Nama Pasien :</label>
-                                    <input type="text" name="nama[]" class="form-control" placeholder="Nama Pasien ...">
+                                    <input type="text" name="nama" class="form-control" placeholder="Nama Pasien ...">
                                 </div>
                                 </div>
 
@@ -81,7 +86,7 @@
                                 <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Jumlah :</label>
-                                    <input type="number" name="jumlah[]" class="form-control" placeholder="Jumlah ...">
+                                    <input type="number" name="rows[0][jumlah]" class="form-control" placeholder="Jumlah ...">
                                 </div>
                                 </div>
 
@@ -91,7 +96,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Nama Obat/Dosis :</label>
-                                    <select name="obat[]" class="form-control" placeholder="Nama Obat ...">
+                                    <select name="rows[0][obat]" class="form-control" placeholder="Nama Obat ...">
                                     <option>Paracetamol</option>
                                     <option>Sirup Anak</option>
                                     <option>Antibiotik</option>
@@ -110,7 +115,7 @@
                                     <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                     </div>
-                                    <input type="text" name="ed[]" class="form-control pull-right" id="datepicker" placeholder="Expired Date ...">
+                                    <input type="text" name="rows[0][ed]" class="datepicker form-control pull-right" id="date[0]" placeholder="Expired Date ...">
                                 </div>
                                 <!-- /.input group -->
                                 </div>
@@ -125,14 +130,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Indikasi Obat :</label>
-                                    <input type="text" name="indikasi[]" class="form-control" placeholder="Indikasi Obat ...">
+                                    <input type="text" name="rows[0][indikasi]" class="form-control" placeholder="Indikasi Obat ...">
                                 </div>
                                 </div>
 
                                 <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Maksimal Pemberian :</label>
-                                    <select name="maksimal[]" class="form-control" placeholder="Maksimal Pemberian ...">
+                                    <select name="rows[0][maksimal]" class="form-control" placeholder="Maksimal Pemberian ...">
                                     <option>Maksimal 1 Hari</option>
                                     <option>Maksimal 2 Hari</option>
                                     <option>Maksimak 3 Hari</option>
@@ -147,7 +152,7 @@
                                 <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Rute Pemberian :</label>
-                                    <select name="rute_pemberian[]" class="form-control" placeholder="Nama Obat/Dosis ...">
+                                    <select name="rows[0][rute_pemberian]" class="form-control" placeholder="Nama Obat/Dosis ...">
                                     <option>Hisap</option>
                                     <option>Tablet</option>
                                     <option>Bungkus</option>
@@ -157,20 +162,20 @@
                                 <div class="col-md-1">
                                 <div class="form-group">
                                     <label>x Sehari :</label>
-                                    <input type="number" name="aturan_pakai[]" class="form-control" placeholder="x Sehari ...">
+                                    <input type="number" name="rows[0][aturan_pakai]" class="form-control" placeholder="x Sehari ...">
                                 </div>
                                 </div>
                                 <div class="col-md-1">
                                 <div class="form-group">
                                     <label>x :</label>
-                                    <input type="number" name="aturan_pakai2[]" class="form-control" placeholder="x ...">
+                                    <input type="number" name="rows[0][aturan_pakai2]" class="form-control" placeholder="x ...">
                                 </div>
                                 </div>
 
                                 <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Aturan Minum:</label>
-                                    <select name="sebelum_sesudah[]" class="form-control" placeholder="Aturan Minum ...">
+                                    <select name="rows[0][sebelum_sesudah]" class="form-control" placeholder="Aturan Minum ...">
                                     <option>Sebelum Makan</option>
                                     <option>Sesudah Makan</option>
                                     <option>Pagi Hari</option>
@@ -185,7 +190,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Satuan Obat :</label>
-                                    <select name="bentukobat[]" class="form-control" placeholder="Satuan Obat ...">
+                                    <select name="rows[0][bentukobat]" class="form-control" placeholder="Satuan Obat ...">
                                     <option>Oles</option>
                                     <option>Bungkus</option>
                                     <option>Unit</option>
@@ -234,9 +239,13 @@
 <script>
 $(document).ready(function(){
     var i=1;
+    var j=0;
     $('#add').click(function(){
         i++;
-        $('#dynamic_field').append('<tr id="row'+i+'"><td><div class="row"><div class="col-md-6"><div class="form-group"><label>No RM :</label><input type="number" name="mr[]" class="form-control" placeholder="No RM ..."></div></div><div class="col-md-6"><div class="form-group"><label>Per Jam :</label><select name="aturan_pakai3[]" class="form-control" placeholder="Per Jam ..."><option>Tiap 1 Jam</option><option>Tiap 2 Jam</option><option>Tiap 3 Jam</option></select></div></div></div><div class="row"><div class="col-md-6"><div class="form-group"><label>Nama Pasien :</label><input type="text" name="nama[]" class="form-control" placeholder="Nama Pasien ..."></div></div><div class="col-md-6"><div class="form-group"><label>Jumlah :</label><input type="number" name="jumlah[]" class="form-control" placeholder="Jumlah ..."></div></div></div><div class="row"><div class="col-md-6"><div class="form-group"><label>Nama Obat/Dosis :</label><select name="obat[]" class="form-control" placeholder="Nama Obat ..."><option>Paracetamol</option><option>Sirup Anak</option><option>Antibiotik</option></select></div></div><div class="col-md-6"><div class="form-group"><label>Expired Date :</label><div class="input-group date"><div class="input-group-addon"><i class="fa fa-calendar"></i></div><input type="text" name="ed[]" class="form-control pull-right" id="datepicker" placeholder="Expired Date ..."></div></div></div></div><div class="row"><div class="col-md-6"><div class="form-group"><label>Indikasi Obat :</label><input type="text" name="indikasi[]" class="form-control" placeholder="Indikasi Obat ..."></div></div><div class="col-md-6"><div class="form-group"><label>Maksimal Pemberian :</label><select name="maksimal[]" class="form-control" placeholder="Maksimal Pemberian ..."><option>Maksimal 1 Hari</option><option>Maksimal 2 Hari</option><option>Maksimak 3 Hari</option></select></div></div></div><div class="row"><div class="col-md-4"><div class="form-group"><label>Rute Pemberian :</label><select name="rute_pemberian[]" class="form-control" placeholder="Nama Obat/Dosis ..."><option>Hisap</option><option>Tablet</option><option>Bungkus</option></select></div></div><div class="col-md-1"><div class="form-group"><label>x Sehari :</label><input type="number" name="aturan_pakai[]" class="form-control" placeholder="x Sehari ..."></div></div><div class="col-md-1"><div class="form-group"><label>x :</label><input type="number" name="aturan_pakai2[]" class="form-control" placeholder="x ..."></div></div><div class="col-md-6"><div class="form-group"><label>Aturan Minum:</label><select name="sebelum_sesudah[]" class="form-control" placeholder="Aturan Minum ..."><option>Sebelum Makan</option><option>Sesudah Makan</option><option>Pagi Hari</option></select></div></div></div><div class="row"><!-- row --><div class="col-md-6"><div class="form-group"><label>Satuan Obat :</label><select name="bentukobat[]" class="form-control" placeholder="Satuan Obat ..."><option>Oles</option><option>Bungkus</option><option>Unit</option></select></div></div></div></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');
+        j++;
+        $('#dynamic_field').append('<tr><td colspan="2"><hr style="border-top:5px solid #eee;"></td></tr><tr id="row'+i+'"><td><div class="row"><div class="col-md-6"><div class="form-group"><label>Nama Obat/Dosis :</label><select name="rows['+j+'][obat]" class="form-control" placeholder="Nama Obat ..."><option>Paracetamol</option><option>Sirup Anak</option><option>Antibiotik</option></select></div></div><div class="col-md-6"><div class="form-group"><label>Per Jam :</label><select name="rows['+j+'][aturan_pakai3]" class="form-control" placeholder="Per Jam ..."><option>Tiap 1 Jam</option><option>Tiap 2 Jam</option><option>Tiap 3 Jam</option></select></div></div></div><div class="row"><div class="col-md-6"><div class="form-group"><label>Indikasi Obat :</label><input type="text" name="rows['+j+'][indikasi]" class="form-control" placeholder="Indikasi Obat ..."></div></div><div class="col-md-6"><div class="form-group"><label>Jumlah :</label><input type="number" name="rows['+j+'][jumlah]" class="form-control" placeholder="Jumlah ..."></div></div></div><div class="row"><div class="col-md-4"><div class="form-group"><label>Rute Pemberian :</label><select name="rows['+j+'][rute_pemberian]" class="form-control" placeholder="Nama Obat/Dosis ..."><option>Hisap</option><option>Tablet</option><option>Bungkus</option></select></div></div><div class="col-md-1"><div class="form-group"><label>x Sehari :</label><input type="number" name="rows['+j+'][aturan_pakai]" class="form-control" placeholder="x Sehari ..."></div></div><div class="col-md-1"><div class="form-group"><label>x :</label><input type="number" name="rows['+j+'][aturan_pakai2]" class="form-control" placeholder="x ..."></div></div><div class="form-group"><label>Expired Date :</label><div class="input-group date"><div class="input-group-addon"><i class="fa fa-calendar"></i></div><input type="text" name="rows['+j+'][ed]" class="datepicker form-control pull-right" id="date['+j+']" placeholder="Expired Date ..."></div></div></div></div><div class="row"><div class="col-md-6"><div class="form-group"><label>Satuan Obat :</label><select name="rows['+j+'][bentukobat]" class="form-control" placeholder="Satuan Obat ..."><option>Oles</option><option>Bungkus</option><option>Unit</option></select></div></div><div class="col-md-6"><div class="form-group"><label>Maksimal Pemberian :</label><select name="rows['+j+'][maksimal]" class="form-control" placeholder="Maksimal Pemberian ..."><option>Maksimal 1 Hari</option><option>Maksimal 2 Hari</option><option>Maksimak 3 Hari</option></select></div></div></div><div class="row"><div class="col-md-6"><div class="form-group"><label>Aturan Minum:</label><select name="rows['+j+'][sebelum_sesudah]" class="form-control" placeholder="Aturan Minum ..."><option>Sebelum Makan</option><option>Sesudah Makan</option><option>Pagi Hari</option></select></div></div></div><div class="row"><!-- row --><div class="col-md-6"></div></div></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');
+
+        $('.datepicker').datepicker({ format: "yyyy-mm-dd" });
     });
 
     $(document).on('click', '.btn_remove', function(){
@@ -244,18 +253,18 @@ $(document).ready(function(){
         $('#row'+button_id+'').remove();
     });
 
-    $('#submit').click(function(){
-        $.ajax({
-            url:"name.php",
-            method:"POST",
-            data:$('#add_name').serialize(),
-            success:function(data)
-            {
-                alert(data);
-                $('#add_name')[0].reset();
-            }
-        });
-    });
+    // $('#submit').click(function(){
+    //     $.ajax({
+    //         url:"name.php",
+    //         method:"POST",
+    //         data:$('#add_name').serialize(),
+    //         success:function(data)
+    //         {
+    //             alert(data);
+    //             $('#add_name')[0].reset();
+    //         }
+    //     });
+    // });
 
 });
 </script>
