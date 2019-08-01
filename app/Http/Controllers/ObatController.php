@@ -17,7 +17,7 @@ class ObatController extends Controller
 
     public function tambahObat(Request $request) {
 
-        $tambahObat = \DB::table('obat')->insert([
+        $tambahobat = \DB::table('obat')->insert([
             'nama_obat' => $request->nama_obat,
             'stok' => $request->stok,
         ]);
@@ -27,7 +27,7 @@ class ObatController extends Controller
 
     public function editObat(Request $request, $id) {
 
-        $editObat = \DB::table('obat')->where('id', $id)->update([
+        $editobat = \DB::table('obat')->where('id', $id)->update([
             'nama_obat' => $request->nama_obat,
             'stok' => $request->stok,
         ]);
@@ -37,9 +37,7 @@ class ObatController extends Controller
 
     public function hapusObat(Request $request, $id) {
 
-       $hapusObat = \DB::table('obat')
-       ->where('id', $id)
-       ->delete();
+       $hapusobat = \DB::table('obat')->where('id', $id)->delete();
 
        return back();
     }

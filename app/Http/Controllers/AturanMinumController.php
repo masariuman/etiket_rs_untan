@@ -19,4 +19,18 @@ class AturanMinumController extends Controller
 
         return back();
     }
+
+    public function editAturanMinum(Request $request) {
+        $editaturanminum = \DB::table('aturan_minum')->where('id', $id)->update([
+            'nama_aturan_minum' => $request->nama_aturan_minum,
+        ]);
+
+        return back();
+    }
+
+    public function hapusAturanMinum(Request $request) {
+        $hapusaturanminum = \DB::table('aturan_minum')->where('id', $id)->delete();
+
+        return back();
+    }
 }

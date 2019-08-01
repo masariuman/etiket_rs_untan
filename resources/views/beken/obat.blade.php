@@ -39,11 +39,11 @@
                 <!-- text input -->
                 <div class="form-group">
                   <label>Nama Obat</label>
-                  <input type="text" name="nama_obat" class="form-control" placeholder="Nama Obat ...">
+                  <input type="text" name="nama_obat" class="form-control" placeholder="Nama Obat ..." required >
                 </div>
                 <div class="form-group">
                   <label>Stok Obat</label>
-                  <input type="number" name="stok" class="form-control" placeholder="Stok Obat ...">
+                  <input type="number" name="stok" class="form-control" placeholder="Stok Obat ..." required>
                 </div>
             </div>
             <!-- /.box-body -->

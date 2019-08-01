@@ -39,7 +39,7 @@
                 <!-- text input -->
                 <div class="form-group">
                   <label>Rute Pemberian</label>
-                  <input type="text" name="nama_rute_pemberian" class="form-control" placeholder="Rute Pemberian ...">
+                  <input type="text" name="nama_rute_pemberian" class="form-control" placeholder="Rute Pemberian ..." required>
                 </div>
             </div>
             <!-- /.box-body -->

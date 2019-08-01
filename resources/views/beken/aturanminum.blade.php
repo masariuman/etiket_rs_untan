@@ -39,7 +39,7 @@
                 <!-- text input -->
                 <div class="form-group">
                   <label>Aturan Minum</label>
-                  <input type="text" name="nama_aturan_minum" class="form-control" placeholder="Aturan Minum ...">
+                  <input type="text" name="nama_aturan_minum" class="form-control" placeholder="Aturan Minum ..." required>
                 </div>
             </div>
             <!-- /.box-body -->
@@ -72,8 +72,17 @@
                 <tr>
                   <td>{{ ++$key }}</td>
                   <td>{{ $aturanminum->nama_aturan_minum}}</td>
-                  <td><div class="col-md-5 col-sm-4"><a href="/edit"><i class="fa fa-fw fa-edit text-green"></i>Edit</a></div>
-                      <div class="col-md-5 col-sm-4"><a href="/hapus"><i class="fa fa-fw fa-trash text-red"></i>Hapus</a></div>
+                  <td>
+                      <!-- <div class="col-md-5 col-sm-4" data-toggle="modal" data-target="#modal-default"><i class="fa fa-fw fa-edit text-green"></i>Edit</div>
+                      <div class="col-md-5 col-sm-4" data-toggle="modal" data-target="#modal-default2"><i class="fa fa-fw fa-trash text-red"></i>Hapus</div> -->
+                      <div class="col-md-2 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                      <i class="fa fa-fw fa-edit text-green"></i>
+                         Edit
+                       </button></div>
+                      <div class="col-md-2 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default2">
+                      <i class="fa fa-fw fa-trash text-red"></i>
+                         Hapus
+                      </button></div>
                   </td>
                 </tr>
                 @endforeach
@@ -83,6 +92,65 @@
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
+
+
+
+        <div class="modal fade" id="modal-default">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Edit</h4>
+              </div>
+              <div class="modal-body">
+              
+            <form role="form" method="post" action="{{route('tambahSatuanObat')}}">
+              {{csrf_field()}}
+                <!-- text input -->
+                <div class="form-group">
+                  <label>Satuan Obat</label>
+                  <input type="text" name="nama_satuan_obat" class="form-control" placeholder="Satuan Obat ..." required>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </form>  
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+
+
+
+        <div class="modal fade" id="modal-default2">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Hapus</h4>
+              </div>
+              <div class="modal-body">
+                <p>One fine body&hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+         
 
 
 </section>

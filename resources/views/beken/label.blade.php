@@ -50,9 +50,9 @@
                 <div class="form-group">
                   <label>Per Jam :</label>
                   <select name="aturan_pakai3" class="form-control" placeholder="Per Jam ...">
-                  <option>Tiap 1 Jam</option>
-                  <option>Tiap 2 Jam</option>
-                  <option>Tiap 3 Jam</option>
+                  @foreach($perjams as $perjam)
+                  <option>{{ $perjam->nama_per_jam }}</option>
+                  @endforeach
                  </select>
                 </div>  
                 </div>    
@@ -126,9 +126,9 @@
                 <div class="form-group">
                   <label>Maksimal Pemberian :</label>
                   <select name="maksimal" class="form-control" placeholder="Maksimal Pemberian ...">
-                  <option>Maksimal 1 Hari</option>
-                  <option>Maksimal 2 Hari</option>
-                  <option>Maksimak 3 Hari</option>
+                  @foreach($maxpemberians as $maxpemberian)
+                  <option>{{ $maxpemberian->nama_max_pemberian }}</option>
+                  @endforeach
                  </select>
                 </div>  
                 </div>  
@@ -164,9 +164,9 @@
                 <div class="form-group">
                   <label>Aturan Minum:</label>
                   <select name="sebelum_sesudah" class="form-control" placeholder="Aturan Minum ...">
-                  <option>Sebelum Makan</option>
-                  <option>Sesudah Makan</option>
-                  <option>Pagi Hari</option>
+                  @foreach($aturanminums as $aturanminum)
+                  <option>{{ $aturanminum->nama_aturan_minum }}</option>
+                  @endforeach
                  </select>
                 </div>  
               </div>  

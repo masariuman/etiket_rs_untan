@@ -19,4 +19,18 @@ class RutePemberianController extends Controller
 
         return back();
     }
+
+    public function editRutePemberian(Request $request, $id) {
+        $editrutepemberian = \DB::table('rute_pemberian')->where('id', $id)->update([
+            'nama_rute_pemberian' => $request->nama_rute_pemberian,
+        ]);
+
+        return back();
+    }
+
+    public function hapusRutePemberian(Request $request, $id) {
+        $hapusrutepemberian = \DB::table('rute_pemberian')->where('id', $id)->delete(); 
+
+        return back();
+    }
 }

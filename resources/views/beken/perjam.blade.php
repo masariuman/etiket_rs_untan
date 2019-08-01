@@ -39,7 +39,7 @@
                 <!-- text input -->
                 <div class="form-group">
                   <label>Per Jam</label>
-                  <input type="text" name="nama_per_jam" class="form-control" placeholder="Per Jam ...">
+                  <input type="text" name="nama_per_jam" class="form-control" placeholder="Per Jam ..." required>
                 </div>
             </div>
             <!-- /.box-body -->

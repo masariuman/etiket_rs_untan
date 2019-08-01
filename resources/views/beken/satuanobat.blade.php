@@ -39,7 +39,7 @@
                 <!-- text input -->
                 <div class="form-group">
                   <label>Satuan Obat</label>
-                  <input type="text" name="nama_satuan_obat" class="form-control" placeholder="Satuan Obat ...">
+                  <input type="text" name="nama_satuan_obat" class="form-control" placeholder="Satuan Obat ..." required>
                 </div>
             </div>
             <!-- /.box-body -->

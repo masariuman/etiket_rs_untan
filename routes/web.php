@@ -42,4 +42,6 @@ Route::post('tambah_maxpemberian', 'MaxPemberianController@tambahMaxPemberian')-
 
 Route::get('aturanminum', 'AturanMinumController@dataAturanMinum')->name('aturanMinum');
 Route::post('tambah_aturanminum', 'AturanMinumController@tambahAturanMinum')->name('tambahAturanMinum');
+Route::post('edit_aturanminum', 'AturanMinumController@editAturanMinum')->name('editAturanMinum');
+Route::post('hapus_aturanminum', 'AturanMinumController@hapusAturanMinum')->name('hapusAturanMinum');
 

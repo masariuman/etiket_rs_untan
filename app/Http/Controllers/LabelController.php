@@ -13,8 +13,11 @@ class LabelController extends Controller
         $obats = \DB::table('obat')->get();
         $rutepemberians = \DB::table('rute_pemberian')->get();
         $satuanobats = \DB::table('satuan_obat')->get();
+        $perjams = \DB::table('per_jam')->get();
+        $maxpemberians = \DB::table('max_pemberian')->get();
+        $aturanminums = \DB::table('aturan_minum')->get();
 
-        return view('beken.label', compact('obats', 'rutepemberians', 'satuanobats'));
+        return view('beken.label', compact('obats', 'rutepemberians', 'satuanobats', 'perjams', 'maxpemberians', 'aturanminums'));
 
     }
 

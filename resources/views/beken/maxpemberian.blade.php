@@ -39,7 +39,7 @@
                 <!-- text input -->
                 <div class="form-group">
                   <label>Max Pemberian</label>
-                  <input type="text" name="nama_max_pemberian" class="form-control" placeholder="Max Pemberian ...">
+                  <input type="text" name="nama_max_pemberian" class="form-control" placeholder="Max Pemberian ..." required>
                 </div>
             </div>
             <!-- /.box-body -->

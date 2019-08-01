@@ -20,4 +20,18 @@ class SatuanObatController extends Controller
 
         return back();
     }
+
+    public function editSatuanObat(Request $request, $id) {
+        $editsatuanobat = \DB::table('satuan_obat')->where('id', $id)->update([
+            'nama_satuan_obat' =>$request->nama_satuan_obat,
+        ]);
+
+        return back();
+    }
+
+    public function hapusSatuanObat(Request $request, $id) {
+        $hapussatuanobat = \DB::table('satuan_obat')->where('id', $id)->delete();
+
+        return back();
+    }
 }
