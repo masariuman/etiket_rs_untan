@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 class RutePemberianController extends Controller
 {
     public function dataRutePemberian() {
-        $rutepemberians = \DB::table('rute_pemberian')->get();
+        $rutepemberian = \DB::table('rute_pemberian')->get();
 
-        return view('beken.rutepemberian', compact('rutepemberians'));
+        return view('beken.rutepemberian', compact('rutepemberian'));
     }
 
     public function tambahRutePemberian(Request $request) {

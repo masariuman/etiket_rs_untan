@@ -68,12 +68,21 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($perjams as $key => $perjam)
+                @foreach($perjam as $key => $perjams)
                 <tr>
                   <td>{{ ++$key }}</td>
-                  <td>{{ $perjam->nama_per_jam}}</td>
-                  <td><div class="col-md-5 col-sm-4"><a href="/edit"><i class="fa fa-fw fa-edit text-green"></i>Edit</a></div>
-                      <div class="col-md-5 col-sm-4"><a href="/hapus"><i class="fa fa-fw fa-trash text-red"></i>Hapus</a></div>
+                  <td>{{ $perjams->nama_per_jam}}</td>
+                  <td>
+                       <!-- <div class="col-md-5 col-sm-4" data-toggle="modal" data-target="#modal-default"><i class="fa fa-fw fa-edit text-green"></i>Edit</div>
+                      <div class="col-md-5 col-sm-4" data-toggle="modal" data-target="#modal-default2"><i class="fa fa-fw fa-trash text-red"></i>Hapus</div> -->
+                      <div class="col-md-2 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default-{{ $perjams->id }}">
+                      <i class="fa fa-fw fa-edit text-green"></i>
+                         Edit
+                       </button></div>
+                      <div class="col-md-2 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default2-{{ $perjams->id }}">
+                      <i class="fa fa-fw fa-trash text-red"></i>
+                         Hapus
+                      </button></div>
                   </td>
                 </tr>
                 @endforeach
@@ -83,6 +92,73 @@
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
+
+
+          @foreach($perjam as $perjams)
+        <div class="modal fade" id="modal-default-{{ $perjams->id }}">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Edit Data : {{ $perjams->nama_per_jam }}</h4>
+              </div>
+              <div class="modal-body">
+              
+            <form role="form" method="post" action="{{route('editPerJam', $perjams->id)}}">
+              @method('PATCH')
+              {{csrf_field()}}
+                <!-- text input -->
+                <div class="form-group">
+                  <label>Per Jam</label>
+                  <input type="text" name="nama_per_jam" value="{{ $perjams->nama_per_jam }}" class="form-control" placeholder="Per Jam ..." required>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Edit</button>
+              </div>
+            </form>  
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+@endforeach
+
+
+@foreach($perjam as $perjams)
+        <div class="modal fade" id="modal-default2-{{ $perjams->id }}">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Hapus Data : {{ $perjams->nama_per_jam }}</h4>
+              </div>
+              <div class="modal-body">
+                
+            <form role="form" method="post" action="{{route('hapusPerJam', $perjams->id)}}">
+             @method('DELETE')
+             {{csrf_field()}}
+
+              <center><h3>Apakah Anda Yakin ?</h3></center>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </div>
+            </form> 
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+@endforeach
 
 
 </section>

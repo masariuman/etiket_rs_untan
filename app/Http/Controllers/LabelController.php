@@ -10,14 +10,14 @@ class LabelController extends Controller
 {
     public function dataLabel() {
 
-        $obats = \DB::table('obat')->get();
-        $rutepemberians = \DB::table('rute_pemberian')->get();
-        $satuanobats = \DB::table('satuan_obat')->get();
-        $perjams = \DB::table('per_jam')->get();
-        $maxpemberians = \DB::table('max_pemberian')->get();
-        $aturanminums = \DB::table('aturan_minum')->get();
+        $obat = \DB::table('obat')->get();
+        $rutepemberian = \DB::table('rute_pemberian')->get();
+        $satuanobat = \DB::table('satuan_obat')->get();
+        $perjam = \DB::table('per_jam')->get();
+        $maxpemberian = \DB::table('max_pemberian')->get();
+        $aturanminum = \DB::table('aturan_minum')->get();
 
-        return view('beken.label', compact('obats', 'rutepemberians', 'satuanobats', 'perjams', 'maxpemberians', 'aturanminums'));
+        return view('beken.label', compact('obat', 'rutepemberian', 'satuanobat', 'perjam', 'maxpemberian', 'aturanminum'));
 
     }
 

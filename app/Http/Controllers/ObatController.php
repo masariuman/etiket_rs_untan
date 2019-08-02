@@ -9,9 +9,9 @@ class ObatController extends Controller
 {
     public function dataObat() {
         
-        $obats = \DB::table('obat')->get();
+        $obat = \DB::table('obat')->get();
 
-        return view('beken.obat', compact('obats'));
+        return view('beken.obat', compact('obat'));
     }
 
 

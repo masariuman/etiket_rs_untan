@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 class PerJamController extends Controller
 {
     public function dataPerJam() {
-        $perjams = \DB::table('per_jam')->get();
+        $perjam = \DB::table('per_jam')->get();
 
-        return view('beken.perjam', compact('perjams'));
+        return view('beken.perjam', compact('perjam'));
     }
 
     public function tambahPerJam(Request $request) {
@@ -20,7 +20,7 @@ class PerJamController extends Controller
         return back();
     }
 
-    public function editPerJam(Request $request) {
+    public function editPerJam(Request $request, $id) {
         $editPerJam = \DB::table('per_jam')->where('id', $id)->update([
             'nama_per_jam' => $request->nama_per_jam,
         ]);
@@ -29,7 +29,7 @@ class PerJamController extends Controller
 
     }
 
-    public function hapusPerJam(Request $request) {
+    public function hapusPerJam(Request $request, $id) {
         $hapusPerJam = \DB::table('per_jam')->where('id', $id)->delete();
 
         return back();

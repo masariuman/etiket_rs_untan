@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 class SatuanObatController extends Controller
 {
     public function dataSatuanObat() {
-        $satuanobats = \DB::table('satuan_obat')->get();
+        $satuanobat = \DB::table('satuan_obat')->get();
 
-        return view('beken.satuanobat', compact('satuanobats'));
+        return view('beken.satuanobat', compact('satuanobat'));
 
     }
 

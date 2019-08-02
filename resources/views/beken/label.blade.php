@@ -50,8 +50,8 @@
                 <div class="form-group">
                   <label>Per Jam :</label>
                   <select name="aturan_pakai3" class="form-control" placeholder="Per Jam ...">
-                  @foreach($perjams as $perjam)
-                  <option>{{ $perjam->nama_per_jam }}</option>
+                  @foreach($perjam as $perjams)
+                  <option>{{ $perjams->nama_per_jam }}</option>
                   @endforeach
                  </select>
                 </div>  
@@ -85,8 +85,8 @@
                 <div class="form-group">
                   <label>Nama Obat/Dosis :</label>
                   <select name="obat" class="form-control" placeholder="Nama Obat ...">
-                  @foreach($obats as $obat)
-                  <option>{{ $obat->nama_obat }}</option>
+                  @foreach($obat as $obats)
+                  <option>{{ $obats->nama_obat }}</option>
                   @endforeach
                  </select>
                 </div>  
@@ -126,8 +126,8 @@
                 <div class="form-group">
                   <label>Maksimal Pemberian :</label>
                   <select name="maksimal" class="form-control" placeholder="Maksimal Pemberian ...">
-                  @foreach($maxpemberians as $maxpemberian)
-                  <option>{{ $maxpemberian->nama_max_pemberian }}</option>
+                  @foreach($maxpemberian as $maxpemberians)
+                  <option>{{ $maxpemberians->nama_max_pemberian }}</option>
                   @endforeach
                  </select>
                 </div>  
@@ -141,8 +141,8 @@
                 <div class="form-group">
                   <label>Rute Pemberian :</label>
                   <select name="rute_pemberian" class="form-control" placeholder="Rute Pemberian ...">
-                  @foreach($rutepemberians as $rutepemberian)
-                  <option>{{ $rutepemberian->nama_rute_pemberian }}</option>
+                  @foreach($rutepemberian as $rutepemberians)
+                  <option>{{ $rutepemberians->nama_rute_pemberian }}</option>
                   @endforeach
                  </select>
                 </div>  
@@ -164,8 +164,8 @@
                 <div class="form-group">
                   <label>Aturan Minum:</label>
                   <select name="sebelum_sesudah" class="form-control" placeholder="Aturan Minum ...">
-                  @foreach($aturanminums as $aturanminum)
-                  <option>{{ $aturanminum->nama_aturan_minum }}</option>
+                  @foreach($aturanminum as $aturanminums)
+                  <option>{{ $aturanminums->nama_aturan_minum }}</option>
                   @endforeach
                  </select>
                 </div>  
@@ -179,8 +179,8 @@
                 <div class="form-group">
                   <label>Satuan Obat :</label>
                   <select name="bentukobat" class="form-control" placeholder="Satuan Obat ...">
-                  @foreach($satuanobats as $satuanobat)
-                  <option>{{$satuanobat->nama_satuan_obat}}</option>
+                  @foreach($satuanobat as $satuanobats)
+                  <option>{{$satuanobats->nama_satuan_obat}}</option>
                   @endforeach          
                  </select>
                 </div> 

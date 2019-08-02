@@ -7,13 +7,13 @@ use Illuminate\Http\Request;
 class MaxPemberianController extends Controller
 {
     public function dataMaxPemberian() {
-        $maxPemberians = \DB::table('max_pemberian')->get();
+        $maxpemberian = \DB::table('max_pemberian')->get();
 
-        return view('beken.maxpemberian', compact('maxpemberians'));
+        return view('beken.maxpemberian', compact('maxpemberian'));
     }
 
     public function tambahMaxPemberian(Request $request) {
-        $tambahMaxPemberian = \DB::table('max_pemberian')->insert([
+        $tambahmaxpemberian = \DB::table('max_pemberian')->insert([
             'nama_max_pemberian' => $request->nama_max_pemberian,
         ]);
 
@@ -21,7 +21,7 @@ class MaxPemberianController extends Controller
     }
 
     public function editMaxPemberian(Request $request, $id) {
-        $editMaxPemberian = \DB::table('max_pemberian')->where('id', $id)->update([
+        $editmaxpemberian = \DB::table('max_pemberian')->where('id', $id)->update([
             'nama_max_pemberian' => $request->nama_max_pemberian,
         ]);
 
@@ -29,7 +29,7 @@ class MaxPemberianController extends Controller
     }
 
     public function hapusMaxPemberian(Request $request, $id) {
-        $hapusMaxPemberian = \DB::table('max_pemberian')->where('id', $id)->delete();
+        $hapusmaxpemberian = \DB::table('max_pemberian')->where('id', $id)->delete();
 
         return back();
     }

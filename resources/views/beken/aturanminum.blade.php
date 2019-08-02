@@ -68,18 +68,18 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($aturanminums as $key => $aturanminum)
+                @foreach($aturanminum as $key => $aturanminums)
                 <tr>
                   <td>{{ ++$key }}</td>
-                  <td>{{ $aturanminum->nama_aturan_minum}}</td>
+                  <td>{{ $aturanminums->nama_aturan_minum}}</td>
                   <td>
                       <!-- <div class="col-md-5 col-sm-4" data-toggle="modal" data-target="#modal-default"><i class="fa fa-fw fa-edit text-green"></i>Edit</div>
                       <div class="col-md-5 col-sm-4" data-toggle="modal" data-target="#modal-default2"><i class="fa fa-fw fa-trash text-red"></i>Hapus</div> -->
-                      <div class="col-md-2 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                      <div class="col-md-2 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default-{{ $aturanminums->id }}">
                       <i class="fa fa-fw fa-edit text-green"></i>
                          Edit
                        </button></div>
-                      <div class="col-md-2 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default2">
+                      <div class="col-md-2 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default2-{{ $aturanminums->id }}">
                       <i class="fa fa-fw fa-trash text-red"></i>
                          Hapus
                       </button></div>
@@ -94,29 +94,30 @@
           <!-- /.box -->
 
 
-
-        <div class="modal fade" id="modal-default">
+@foreach($aturanminum as $aturanminums)
+        <div class="modal fade" id="modal-default-{{ $aturanminums->id }}">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Edit</h4>
+                <h4 class="modal-title">Edit Data : {{ $aturanminums->nama_aturan_minum }}</h4>
               </div>
               <div class="modal-body">
               
-            <form role="form" method="post" action="{{route('tambahSatuanObat')}}">
+            <form role="form" method="post" action="{{route('editAturanMinum', $aturanminums->id)}}">
+              @method('PATCH')
               {{csrf_field()}}
                 <!-- text input -->
                 <div class="form-group">
-                  <label>Satuan Obat</label>
-                  <input type="text" name="nama_satuan_obat" class="form-control" placeholder="Satuan Obat ..." required>
+                  <label>Aturan Minum</label>
+                  <input type="text" name="nama_aturan_minum" value="{{ $aturanminums->nama_aturan_minum }}" class="form-control" placeholder="Aturan Minum ..." required>
                 </div>
 
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary">Edit</button>
               </div>
             </form>  
             </div>
@@ -125,32 +126,39 @@
           <!-- /.modal-dialog -->
         </div>
         <!-- /.modal -->
+@endforeach
 
 
-
-
-        <div class="modal fade" id="modal-default2">
+@foreach($aturanminum as $aturanminums)
+        <div class="modal fade" id="modal-default2-{{ $aturanminums->id }}">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Hapus</h4>
+                <h4 class="modal-title">Hapus Data : {{ $aturanminums->nama_aturan_minum }}</h4>
               </div>
               <div class="modal-body">
-                <p>One fine body&hellip;</p>
+                
+            <form role="form" method="post" action="{{route('hapusAturanMinum', $aturanminums->id)}}">
+             @method('DELETE')
+             {{csrf_field()}}
+
+              <center><h3>Apakah Anda Yakin ?</h3></center>
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-danger">Delete</button>
               </div>
+            </form> 
             </div>
             <!-- /.modal-content -->
           </div>
           <!-- /.modal-dialog -->
         </div>
         <!-- /.modal -->
-         
+@endforeach        
 
 
 </section>

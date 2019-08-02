@@ -68,13 +68,21 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($satuanobats as $key => $satuanobat)
+                @foreach($satuanobat as $key => $satuanobats)
                 <tr>
                   <td>{{ ++$key }}</td>
-                  <td>{{ $satuanobat->nama_satuan_obat}}</td>
-                  <td><div class="col-md-5 col-sm-4"><a href="/edit"><i class="fa fa-fw fa-edit text-green"></i>Edit</a></div>
-                      <div class="col-md-5 col-sm-4"><a href="/hapus"><i class="fa fa-fw fa-trash text-red"></i>Hapus</a></div>
-                  </td>
+                  <td>{{ $satuanobats->nama_satuan_obat}}</td>
+                  <td>
+                       <!-- <div class="col-md-5 col-sm-4" data-toggle="modal" data-target="#modal-default"><i class="fa fa-fw fa-edit text-green"></i>Edit</div>
+                      <div class="col-md-5 col-sm-4" data-toggle="modal" data-target="#modal-default2"><i class="fa fa-fw fa-trash text-red"></i>Hapus</div> -->
+                      <div class="col-md-2 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default-{{ $satuanobats->id }}">
+                      <i class="fa fa-fw fa-edit text-green"></i>
+                         Edit
+                       </button></div>
+                      <div class="col-md-2 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default2-{{ $satuanobats->id }}">
+                      <i class="fa fa-fw fa-trash text-red"></i>
+                         Hapus
+                      </button></div>
                 </tr>
                 @endforeach
                 </tbody>
@@ -83,6 +91,73 @@
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
+
+
+          @foreach($satuanobat as $satuanobats)
+        <div class="modal fade" id="modal-default-{{ $satuanobats->id }}">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Edit Data : {{ $satuanobats->nama_satuan_obat }}</h4>
+              </div>
+              <div class="modal-body">
+              
+            <form role="form" method="post" action="{{route('editSatuanObat', $satuanobats->id)}}">
+              @method('PATCH')
+              {{csrf_field()}}
+                <!-- text input -->
+                <div class="form-group">
+                  <label>Satuan Obat</label>
+                  <input type="text" name="nama_satuan_obat" value="{{ $satuanobats->nama_satuan_obat }}" class="form-control" placeholder="Satuan Obat ..." required>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Edit</button>
+              </div>
+            </form>  
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+@endforeach
+
+
+@foreach($satuanobat as $satuanobats)
+        <div class="modal fade" id="modal-default2-{{ $satuanobats->id }}">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Hapus Data : {{ $satuanobats->nama_satuan_obat }}</h4>
+              </div>
+              <div class="modal-body">
+                
+            <form role="form" method="post" action="{{route('hapusSatuanObat', $satuanobats->id)}}">
+             @method('DELETE')
+             {{csrf_field()}}
+
+              <center><h3>Apakah Anda Yakin ?</h3></center>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </div>
+            </form> 
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+@endforeach 
 
 
 </section>

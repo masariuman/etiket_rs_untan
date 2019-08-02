@@ -68,12 +68,21 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($maxpemberians as $key => $maxpemberian)
+                @foreach($maxpemberian as $key => $maxpemberians)
                 <tr>
                   <td>{{ ++$key }}</td>
-                  <td>{{ $maxpemberian->nama_max_pemberian}}</td>
-                  <td><div class="col-md-5 col-sm-4"><a href="/edit"><i class="fa fa-fw fa-edit text-green"></i>Edit</a></div>
-                      <div class="col-md-5 col-sm-4"><a href="/hapus"><i class="fa fa-fw fa-trash text-red"></i>Hapus</a></div>
+                  <td>{{ $maxpemberians->nama_max_pemberian}}</td>
+                  <td>
+                      <!-- <div class="col-md-5 col-sm-4" data-toggle="modal" data-target="#modal-default"><i class="fa fa-fw fa-edit text-green"></i>Edit</div>
+                      <div class="col-md-5 col-sm-4" data-toggle="modal" data-target="#modal-default2"><i class="fa fa-fw fa-trash text-red"></i>Hapus</div> -->
+                      <div class="col-md-2 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default-{{ $maxpemberians->id }}">
+                      <i class="fa fa-fw fa-edit text-green"></i>
+                         Edit
+                       </button></div>
+                      <div class="col-md-2 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default2-{{ $maxpemberians->id }}">
+                      <i class="fa fa-fw fa-trash text-red"></i>
+                         Hapus
+                      </button></div>
                   </td>
                 </tr>
                 @endforeach
@@ -83,6 +92,73 @@
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
+
+
+          @foreach($maxpemberian as $maxpemberians)
+        <div class="modal fade" id="modal-default-{{ $maxpemberians->id }}">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Edit Data : {{ $maxpemberians->nama_max_pemberian }}</h4>
+              </div>
+              <div class="modal-body">
+              
+            <form role="form" method="post" action="{{route('editMaxPemberian', $maxpemberians->id)}}">
+              @method('PATCH')
+              {{csrf_field()}}
+                <!-- text input -->
+                <div class="form-group">
+                  <label>Aturan Minum</label>
+                  <input type="text" name="nama_max_pemberian" value="{{ $maxpemberians->nama_max_pemberian }}" class="form-control" placeholder="Max Pemberian ..." required>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Edit</button>
+              </div>
+            </form>  
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+@endforeach
+
+
+@foreach($maxpemberian as $maxpemberians)
+        <div class="modal fade" id="modal-default2-{{ $maxpemberians->id }}">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Hapus Data : {{ $maxpemberians->nama_max_pemberian }}</h4>
+              </div>
+              <div class="modal-body">
+                
+            <form role="form" method="post" action="{{route('hapusMaxPemberian', $maxpemberians->id)}}">
+             @method('DELETE')
+             {{csrf_field()}}
+
+              <center><h3>Apakah Anda Yakin ?</h3></center>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </div>
+            </form> 
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+@endforeach
 
 
 </section>

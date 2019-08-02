@@ -68,12 +68,21 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($rutepemberians as $key => $rutepemberian)
+                @foreach($rutepemberian as $key => $rutepemberians)
                 <tr>
                   <td>{{ ++$key }}</td>
-                  <td>{{ $rutepemberian->nama_rute_pemberian}}</td>
-                  <td><div class="col-md-5 col-sm-4"><a href="/edit"><i class="fa fa-fw fa-edit text-green"></i>Edit</a></div>
-                      <div class="col-md-5 col-sm-4"><a href="/hapus"><i class="fa fa-fw fa-trash text-red"></i>Hapus</a></div>
+                  <td>{{ $rutepemberians->nama_rute_pemberian}}</td>
+                  <td>
+                      <!-- <div class="col-md-5 col-sm-4" data-toggle="modal" data-target="#modal-default"><i class="fa fa-fw fa-edit text-green"></i>Edit</div>
+                      <div class="col-md-5 col-sm-4" data-toggle="modal" data-target="#modal-default2"><i class="fa fa-fw fa-trash text-red"></i>Hapus</div> -->
+                      <div class="col-md-2 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default-{{ $rutepemberians->id }}">
+                      <i class="fa fa-fw fa-edit text-green"></i>
+                         Edit
+                       </button></div>
+                      <div class="col-md-2 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default2-{{ $rutepemberians->id }}">
+                      <i class="fa fa-fw fa-trash text-red"></i>
+                         Hapus
+                      </button></div>
                   </td>
                 </tr>
                 @endforeach
@@ -84,6 +93,72 @@
           </div>
           <!-- /.box -->
 
+
+          @foreach($rutepemberian as $rutepemberians)
+        <div class="modal fade" id="modal-default-{{ $rutepemberians->id }}">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Edit Data : {{ $rutepemberians->nama_rute_pemberian }}</h4>
+              </div>
+              <div class="modal-body">
+              
+            <form role="form" method="post" action="{{route('editRutePemberian', $rutepemberians->id)}}">
+              @method('PATCH')
+              {{csrf_field()}}
+                <!-- text input -->
+                <div class="form-group">
+                  <label>Rute Pemberian</label>
+                  <input type="text" name="nama_rute_pemberian" value="{{ $rutepemberians->nama_rute_pemberian }}" class="form-control" placeholder="Aturan Minum ..." required>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Edit</button>
+              </div>
+            </form>  
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+@endforeach
+
+
+@foreach($rutepemberian as $rutepemberians)
+        <div class="modal fade" id="modal-default2-{{ $rutepemberians->id }}">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Hapus Data : {{ $rutepemberians->nama_rute_pemberian }}</h4>
+              </div>
+              <div class="modal-body">
+                
+            <form role="form" method="post" action="{{route('hapusRutePemberian', $rutepemberians->id)}}">
+             @method('DELETE')
+             {{csrf_field()}}
+
+              <center><h3>Apakah Anda Yakin ?</h3></center>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </div>
+            </form> 
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+@endforeach 
 
 </section>
 @endsection
