@@ -17,6 +17,8 @@ class RutePemberianController extends Controller
             'nama_rute_pemberian' => $request->nama_rute_pemberian,
         ]);
 
+        \Session::flash('Berhasil', 'Data rute pemberian berhasil ditambahkan');
+
         return back();
     }
 
@@ -25,11 +27,15 @@ class RutePemberianController extends Controller
             'nama_rute_pemberian' => $request->nama_rute_pemberian,
         ]);
 
+        \Session::flash('Berhasil', 'Data rute pemberian berhasil diubah');
+
         return back();
     }
 
     public function hapusRutePemberian(Request $request, $id) {
         $hapusrutepemberian = \DB::table('rute_pemberian')->where('id', $id)->delete(); 
+
+        \Session::flash('Berhasil', 'Data rute pemberian berhasil dihapus');
 
         return back();
     }

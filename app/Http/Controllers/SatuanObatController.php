@@ -18,6 +18,8 @@ class SatuanObatController extends Controller
             'nama_satuan_obat' => $request->nama_satuan_obat,
         ]);
 
+        \Session::flash('Berhasil', 'Data satuan obat berhasil ditambahkan');
+
         return back();
     }
 
@@ -26,11 +28,15 @@ class SatuanObatController extends Controller
             'nama_satuan_obat' =>$request->nama_satuan_obat,
         ]);
 
+        \Session::flash('Berhasil', 'Data satuan obat berhasil diubah');
+
         return back();
     }
 
     public function hapusSatuanObat(Request $request, $id) {
         $hapussatuanobat = \DB::table('satuan_obat')->where('id', $id)->delete();
+
+        \Session::flash('Berhasil', 'Data satuan obat berhasil dihapus');
 
         return back();
     }

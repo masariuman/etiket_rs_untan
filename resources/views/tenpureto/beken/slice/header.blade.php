@@ -16,17 +16,17 @@
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
+          <!-- <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
               <span class="label label-success">4</span>
             </a>
             <ul class="dropdown-menu">
               <li class="header">You have 4 messages</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <ul class="menu">
-                  <li><!-- start message -->
+              <li> -->
+                <!-- inner menu: contains the actual data --><!-- start message -->
+                <!-- <ul class="menu">
+                  <li>
                     <a href="#">
                       <div class="pull-left">
                         <img src="{{asset('tenpureto/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
@@ -37,9 +37,9 @@
                       </h4>
                       <p>Why not buy a new awesome theme?</p>
                     </a>
-                  </li>
+                  </li> -->
                   <!-- end message -->
-                  <li>
+                  <!-- <li>
                     <a href="#">
                       <div class="pull-left">
                         <img src="{{asset('tenpureto/dist/img/user3-128x128.jpg')}}" class="img-circle" alt="User Image">
@@ -91,18 +91,18 @@
               </li>
               <li class="footer"><a href="#">See All Messages</a></li>
             </ul>
-          </li>
+          </li> -->
           <!-- Notifications: style can be found in dropdown.less -->
-          <li class="dropdown notifications-menu">
+          <!-- <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
               <span class="label label-warning">10</span>
             </a>
             <ul class="dropdown-menu">
               <li class="header">You have 10 notifications</li>
-              <li>
+              <li> -->
                 <!-- inner menu: contains the actual data -->
-                <ul class="menu">
+                <!-- <ul class="menu">
                   <li>
                     <a href="#">
                       <i class="fa fa-users text-aqua"></i> 5 new members joined today
@@ -133,19 +133,19 @@
               </li>
               <li class="footer"><a href="#">View all</a></li>
             </ul>
-          </li>
+          </li> -->
           <!-- Tasks: style can be found in dropdown.less -->
-          <li class="dropdown tasks-menu">
+          <!-- <li class="dropdown tasks-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-flag-o"></i>
               <span class="label label-danger">9</span>
             </a>
             <ul class="dropdown-menu">
               <li class="header">You have 9 tasks</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <ul class="menu">
-                  <li><!-- Task item -->
+              <li> -->
+                <!-- inner menu: contains the actual data --><!-- Task item -->
+                <!-- <ul class="menu">
+                  <li>
                     <a href="#">
                       <h3>
                         Design some buttons
@@ -158,9 +158,9 @@
                         </div>
                       </div>
                     </a>
-                  </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
+                  </li> -->
+                  <!-- end task item --><!-- Task item -->
+                  <!-- <li>
                     <a href="#">
                       <h3>
                         Create a nice theme
@@ -173,9 +173,9 @@
                         </div>
                       </div>
                     </a>
-                  </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
+                  </li> -->
+                  <!-- end task item --><!-- Task item -->
+                  <!-- <li>
                     <a href="#">
                       <h3>
                         Some task I need to do
@@ -188,9 +188,9 @@
                         </div>
                       </div>
                     </a>
-                  </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
+                  </li> -->
+                  <!-- end task item --><!-- Task item -->
+                  <!-- <li>
                     <a href="#">
                       <h3>
                         Make beautiful transitions
@@ -203,33 +203,33 @@
                         </div>
                       </div>
                     </a>
-                  </li>
+                  </li> -->
                   <!-- end task item -->
-                </ul>
+                <!-- </ul>
               </li>
               <li class="footer">
                 <a href="#">View all tasks</a>
               </li>
             </ul>
-          </li>
+          </li> -->
           <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
+          <!-- <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="{{asset('tenpureto/dist/img/Untan.png')}}" class="user-image" alt="User Image">
               <span class="hidden-xs">Farmasi RSUNTAN</span>
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu"> -->
               <!-- User image -->
-              <li class="user-header">
+              <!-- <li class="user-header">
                 <img src="{{asset('tenpureto/dist/img/Untan.png')}}" class="img-circle" alt="User Image">
 
                 <p>
                   FARMASI RSUNTAN | Etiket
                   <small>Member since Jun. 2019</small>
                 </p>
-              </li>
+              </li> -->
               <!-- Menu Body -->
-              <li class="user-body">
+              <!-- <li class="user-body">
                 <div class="row">
                   <div class="col-xs-4 text-center">
                     <a href="#">Followers</a>
@@ -240,11 +240,11 @@
                   <div class="col-xs-4 text-center">
                     <a href="#">Friends</a>
                   </div>
-                </div>
+                </div> -->
                 <!-- /.row -->
-              </li>
+              <!-- </li> -->
               <!-- Menu Footer-->
-              <li class="user-footer">
+              <!-- <li class="user-footer">
                 <div class="pull-left">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
@@ -253,7 +253,7 @@
                 </div>
               </li>
             </ul>
-          </li>
+          </li> -->
           <!-- Control Sidebar Toggle Button -->
           <!-- <li>
             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>

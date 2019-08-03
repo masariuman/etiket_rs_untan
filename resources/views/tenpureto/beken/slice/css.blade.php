@@ -27,9 +27,9 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
+  <!-- Icon -->
+  <link rel="shortcut icon" type="image/x-icon" href="{{asset('tenpureto/dist/img/Untan.png')}}" />
 
-
-
-    <!-- DataTables -->
-    <link rel="stylesheet" href="{{asset('tenpureto/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{{asset('tenpureto/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
 

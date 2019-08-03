@@ -17,6 +17,8 @@ class AturanMinumController extends Controller
             'nama_aturan_minum' => $request->nama_aturan_minum,
         ]);
 
+        \Session::flash('Berhasil', 'Data aturan minum berhasil ditambahkan');
+
         return back();
     }
 
@@ -25,11 +27,15 @@ class AturanMinumController extends Controller
             'nama_aturan_minum' => $request->nama_aturan_minum,
         ]);
 
+        \Session::flash('Berhasil', 'Data aturan minum berhasil diubah');
+
         return back();
     }
 
     public function hapusAturanMinum(Request $request, $id) {
         $hapusaturanminum = \DB::table('aturan_minum')->where('id', $id)->delete();
+
+        \Session::flash('Berhasil', 'Data aturan minum berhasil dihapus');
 
         return back();
     }

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-
 class ObatController extends Controller
 {
     public function dataObat() {
@@ -22,6 +21,8 @@ class ObatController extends Controller
             'stok' => $request->stok,
         ]);
 
+        \Session::flash('Berhasil', 'Data obat berhasil ditambahkan');
+
      return back();
     }
 
@@ -32,12 +33,16 @@ class ObatController extends Controller
             'stok' => $request->stok,
         ]);
 
+        \Session::flash('Berhasil', 'Data obat berhasil diubah');
+
      return back();
     }
 
     public function hapusObat(Request $request, $id) {
 
        $hapusobat = \DB::table('obat')->where('id', $id)->delete();
+
+       \Session::flash('Berhasil', 'Data obat berhasil dihapus');
 
        return back();
     }

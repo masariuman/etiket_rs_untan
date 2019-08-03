@@ -17,6 +17,8 @@ class MaxPemberianController extends Controller
             'nama_max_pemberian' => $request->nama_max_pemberian,
         ]);
 
+        \Session::flash('Berhasil', 'Data max pemberian berhasil ditambahkan');
+
         return back();
     }
 
@@ -25,11 +27,15 @@ class MaxPemberianController extends Controller
             'nama_max_pemberian' => $request->nama_max_pemberian,
         ]);
 
+        \Session::flash('Berhasil', 'Data max pemberian berhasil diubah');
+
         return back();
     }
 
     public function hapusMaxPemberian(Request $request, $id) {
         $hapusmaxpemberian = \DB::table('max_pemberian')->where('id', $id)->delete();
+
+        \Session::flash('Berhasil', 'Data max pemberian berhasil dihapus');
 
         return back();
     }

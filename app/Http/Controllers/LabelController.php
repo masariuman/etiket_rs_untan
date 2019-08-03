@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Carbon\Carbon;
-
 
 class LabelController extends Controller
 {
@@ -39,9 +37,11 @@ class LabelController extends Controller
             'jumlah' => $request->jumlah,
             'bentukobat' => $request->bentukobat,
             'nomor_urut_input' => $request->input('mr', $request->mr),
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
         ]);
+
+        \Session::flash('Berhasil', 'Label berhasil dicetak');
 
         return back();
 

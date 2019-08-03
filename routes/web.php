@@ -11,22 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('beken/dashboard');
-});
+// Route::get('/', function () {
+//     return view('beken/dashboard');
+// });
 
 
 Route::get('print','PrintController@generatePDF');
 
 Route::get('templet','PrintController@templet');
 
-Route::get('label', 'LabelController@dataLabel')->name('label');
+Route::get('/', 'LabelController@dataLabel')->name('label');
 Route::post('tambah_label', 'LabelController@tambahLabel')->name('tambahLabel');
 
 Route::get('obat', 'ObatController@dataObat')->name('obat');
 Route::post('tambah_obat', 'ObatController@tambahObat')->name('tambahObat');
-Route::post('edit_obat/{id}', 'ObatController@editObat')->name('editObat');
-Route::post('hapus_obat/{id}', 'ObatControlker@hapusObat')->name('hapusObat');
+Route::patch('edit_obat/{id}', 'ObatController@editObat')->name('editObat');
+Route::delete('hapus_obat/{id}', 'ObatController@hapusObat')->name('hapusObat');
 
 Route::get('rutepemberian', 'RutePemberianController@dataRutePemberian')->name('rutePemberian');
 Route::post('tambah_rutepemberian', 'RutePemberianController@tambahRutePemberian')->name('tambahRutePemberian');

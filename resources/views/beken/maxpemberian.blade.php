@@ -12,7 +12,7 @@
 @endsection
 
 @section('breadcrumb')
-  <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+  <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
   <li class="active">Max Pemberian</li>
 @endsection
 
@@ -22,13 +22,13 @@
 @section('main')
     <!-- Main content -->
     <section class="content container-fluid">
-
+    @include('pesan')
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
         <!-- /.box -->
           <!-- general form elements disabled -->
-          <div class="box box-warning">
+          <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Max Pemberian</h3>
             </div>
@@ -38,14 +38,14 @@
               {{csrf_field()}}
                 <!-- text input -->
                 <div class="form-group">
-                  <label>Max Pemberian</label>
+                  <label>Max Pemberian :</label>
                   <input type="text" name="nama_max_pemberian" class="form-control" placeholder="Max Pemberian ..." required>
                 </div>
             </div>
             <!-- /.box-body -->
 
             <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Tambah</button>
+                <button type="submit" class="btn btn-primary"><i class="fa fa-fw fa-plus"></i>Tambah</button>
             </div>
            </form>
           </div>
@@ -53,7 +53,7 @@
 
 
 
-          <div class="box">
+          <div class="box box-primary">
             <div class="box-header">
               <h3 class="box-title">Data Max Pemberian</h3>
             </div>
@@ -76,13 +76,9 @@
                       <!-- <div class="col-md-5 col-sm-4" data-toggle="modal" data-target="#modal-default"><i class="fa fa-fw fa-edit text-green"></i>Edit</div>
                       <div class="col-md-5 col-sm-4" data-toggle="modal" data-target="#modal-default2"><i class="fa fa-fw fa-trash text-red"></i>Hapus</div> -->
                       <div class="col-md-2 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default-{{ $maxpemberians->id }}">
-                      <i class="fa fa-fw fa-edit text-green"></i>
-                         Edit
-                       </button></div>
+                      <i class="fa fa-fw fa-edit text-green"></i>Ubah</button></div>
                       <div class="col-md-2 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default2-{{ $maxpemberians->id }}">
-                      <i class="fa fa-fw fa-trash text-red"></i>
-                         Hapus
-                      </button></div>
+                      <i class="fa fa-fw fa-trash text-red"></i>Hapus</button></div>
                   </td>
                 </tr>
                 @endforeach
@@ -101,7 +97,7 @@
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Edit Data : {{ $maxpemberians->nama_max_pemberian }}</h4>
+                <h4 class="modal-title">Ubah Data : {{ $maxpemberians->nama_max_pemberian }}</h4>
               </div>
               <div class="modal-body">
               
@@ -110,14 +106,14 @@
               {{csrf_field()}}
                 <!-- text input -->
                 <div class="form-group">
-                  <label>Aturan Minum</label>
+                  <label>Aturan Minum :</label>
                   <input type="text" name="nama_max_pemberian" value="{{ $maxpemberians->nama_max_pemberian }}" class="form-control" placeholder="Max Pemberian ..." required>
                 </div>
 
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Edit</button>
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-fw fa-close"></i>Batal</button>
+                <button type="submit" class="btn btn-primary"><i class="fa fa-fw fa-edit"></i>Ubah</button>
               </div>
             </form>  
             </div>
@@ -144,12 +140,12 @@
              @method('DELETE')
              {{csrf_field()}}
 
-              <center><h3>Apakah Anda Yakin ?</h3></center>
+              <center><h3>Apakah anda yakin ?</h3></center>
 
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-fw fa-close"></i>Batal</button>
+                <button type="submit" class="btn btn-danger"><i class="fa fa-fw fa-trash"></i>Hapus</button>
               </div>
             </form> 
             </div>

@@ -17,6 +17,8 @@ class PerJamController extends Controller
             'nama_per_jam' => $request->nama_per_jam,
         ]);
 
+        \Session::flash('Berhasil', 'Data perjam berhasil ditambahkan');
+
         return back();
     }
 
@@ -25,12 +27,16 @@ class PerJamController extends Controller
             'nama_per_jam' => $request->nama_per_jam,
         ]);
 
+        \Session::flash('Berhasil', 'Data perjam berhasil diubah');
+
         return back();
 
     }
 
     public function hapusPerJam(Request $request, $id) {
         $hapusPerJam = \DB::table('per_jam')->where('id', $id)->delete();
+
+        \Session::flash('Berhasil', 'Data perjam berhasil dihapus');
 
         return back();
     }

@@ -13,7 +13,7 @@
         </div>
       </div>
       <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
+      <!-- <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
           <span class="input-group-btn">
@@ -21,17 +21,17 @@
                 </button>
               </span>
         </div>
-      </form>
+      </form> -->
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MAIN NAVIGATION</li>
-        <li class="{{ Request::is('bedashboard') ? 'active' : '' }}">
+        <li class="header">DAFTAR MENU</li>
+        <!-- <li class="{{ Request::is('bedashboard') ? 'active' : '' }}">
           <a href="/">
             <i class="fa fa-dashboard text-aqua"></i> <span>Beranda</span>
           </a>
-        </li>
-        <li class="{{ Request::is('label') ? 'active' : '' }}">
+        </li> -->
+        <li class="{{ Request::is('/') ? 'active' : '' }}">
           <a href="{{ route('label') }}">
             <i class="fa fa-ticket text-yellow"></i> <span>Label</span>
           </a>

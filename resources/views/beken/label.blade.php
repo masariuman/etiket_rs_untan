@@ -12,7 +12,7 @@
 @endsection
 
 @section('breadcrumb')
-  <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+  <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
   <li class="active">Label</li>
 @endsection
 
@@ -22,13 +22,13 @@
 @section('main')
     <!-- Main content -->
     <section class="content container-fluid">
-
+    @include('pesan')
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
         <!-- /.box -->
           <!-- general form elements disabled -->
-          <div class="box box-warning">
+          <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Data Pasien</h3>
             </div>
@@ -162,7 +162,7 @@
 
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Aturan Minum:</label>
+                  <label>Aturan Minum :</label>
                   <select name="sebelum_sesudah" class="form-control" placeholder="Aturan Minum ...">
                   @foreach($aturanminum as $aturanminums)
                   <option>{{ $aturanminums->nama_aturan_minum }}</option>
@@ -193,7 +193,7 @@
             <!-- /.box-body -->
 
             <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary"><i class="fa fa-fw fa-print"></i>Print</button>
             </div>
            </form>
           </div>
