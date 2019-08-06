@@ -89,10 +89,13 @@ class PrintController extends Controller
     public function generatePDF()
 
     {
-        $label = Label::where('id',1)->get();
-        $count = count($label);
+        $label = Label::all()->last();
+        $created_at = $label->created_at;
+        $label2 = Label::where('created_at',$created_at)->get();
+        // dd($label2);
+        $count = count($label2);
         // $data = ['title' => 'Welcome to belajarphp.net'];
-        $data['label'] = $label;
+        $data['label'] = $label2;
         $data['count'] = $count;
         $data['today'] = date('d/m/Y');
 
@@ -116,5 +119,9 @@ class PrintController extends Controller
         // return $pdf->stream();
         return view('print', $data);
         // return $pdf->download('laporan-pdf.pdf');
+    }
+
+    public function cetak($data){
+        dd($data);
     }
 }

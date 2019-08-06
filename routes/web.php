@@ -16,7 +16,9 @@
 // });
 
 
-Route::get('print','PrintController@generatePDF');
+Route::get('print','PrintController@generatePDF')->name('cetak');
+
+Route::get('cetak/{data}','PrintController@cetak')->name('toAnotherController');
 
 Route::get('templet','PrintController@templet');
 
