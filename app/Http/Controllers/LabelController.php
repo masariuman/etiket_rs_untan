@@ -8,11 +8,22 @@ use App\Label;
 
 class LabelController extends Controller
 {
-    public function index() {
+    public function dataLabel() {
+
+        $obat = \DB::table('obat')->get();
+        $rutepemberian = \DB::table('rute_pemberian')->get();
+        $satuanobat = \DB::table('satuan_obat')->get();
+        $perjam = \DB::table('per_jam')->get();
+        $maxpemberian = \DB::table('max_pemberian')->get();
+        $aturanminum = \DB::table('aturan_minum')->get();
+
+        return view('beken.label', compact('obat', 'rutepemberian', 'satuanobat', 'perjam', 'maxpemberian', 'aturanminum'));
 
     }
 
     public function tambahLabel(Request $request) {
+
+
 
         // $mr = \DB::table('labels')->where('mr')->first();
     foreach($request->rows as $rows) {
@@ -49,6 +60,7 @@ class LabelController extends Controller
             return redirect()->route('cetak');
 
         // return back();
+
 
     }
 }

@@ -1,19 +1,19 @@
 @extends('tenpureto.beken.index')
 
 @section('seo-title')
-	Obat
+	Aturan Minum
 @endsection
 
 @section('title')
   <h1>
-    Obat
+  Aturan Minum
     <small>Farmasi</small>
   </h1>
 @endsection
 
 @section('breadcrumb')
   <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-  <li class="active">Obat</li>
+  <li class="active">Aturan Minum</li>
 @endsection
 
 @push('css')
@@ -30,20 +30,16 @@
           <!-- general form elements disabled -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Tambah Obat</h3>
+              <h3 class="box-title">Aturan Minum</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <form role="form" method="post" action="{{route('tambahObat')}}">
+              <form role="form" method="post" action="{{route('tambahAturanMinum')}}">
               {{csrf_field()}}
                 <!-- text input -->
                 <div class="form-group">
-                  <label>Nama Obat :</label>
-                  <input type="text" name="nama_obat" class="form-control" placeholder="Nama Obat ..." required >
-                </div>
-                <div class="form-group">
-                  <label>Stok Obat :</label>
-                  <input type="number" name="stok" class="form-control" placeholder="Stok Obat ..." required>
+                  <label>Aturan Minum :</label>
+                  <input type="text" name="nama_aturan_minum" class="form-control" placeholder="Aturan Minum ..." required>
                 </div>
             </div>
             <!-- /.box-body -->
@@ -59,7 +55,7 @@
 
           <div class="box box-primary">
             <div class="box-header">
-              <h3 class="box-title">Data Obat</h3>
+              <h3 class="box-title">Data Aturan Minum</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -67,23 +63,21 @@
                 <thead>
                 <tr>
                   <th>No</th>
-                  <th>Nama Obat</th>
-                  <th>Stok Obat</th>
+                  <th>Max Pemberian</th>
                   <th>Option</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($obat as $key => $obats)
+                @foreach($aturanminum as $key => $aturanminums)
                 <tr>
                   <td>{{ ++$key }}</td>
-                  <td>{{ $obats->nama_obat}}</td>
-                  <td>{{ $obats->stok }}</td>
+                  <td>{{ $aturanminums->nama_aturan_minum}}</td>
                   <td>
-                       <!-- <div class="col-md-5 col-sm-4" data-toggle="modal" data-target="#modal-default"><i class="fa fa-fw fa-edit text-green"></i>Edit</div>
+                      <!-- <div class="col-md-5 col-sm-4" data-toggle="modal" data-target="#modal-default"><i class="fa fa-fw fa-edit text-green"></i>Edit</div>
                       <div class="col-md-5 col-sm-4" data-toggle="modal" data-target="#modal-default2"><i class="fa fa-fw fa-trash text-red"></i>Hapus</div> -->
-                      <div class="col-md-4 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default-{{ $obats->id }}">
+                      <div class="col-md-2 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default-{{ $aturanminums->id }}">
                       <i class="fa fa-fw fa-edit text-green"></i>Ubah</button></div>
-                      <div class="col-md-4 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default2-{{ $obats->id }}">
+                      <div class="col-md-2 col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default2-{{ $aturanminums->id }}">
                       <i class="fa fa-fw fa-trash text-red"></i>Hapus</button></div>
                   </td>
                 </tr>
@@ -96,29 +90,26 @@
           <!-- /.box -->
 
 
-          @foreach($obat as $obats)
-        <div class="modal fade" id="modal-default-{{ $obats->id }}">
+@foreach($aturanminum as $aturanminums)
+        <div class="modal fade" id="modal-default-{{ $aturanminums->id }}">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Ubah Data : {{ $obats->nama_obat }}</h4>
+                <h4 class="modal-title">Ubah Data : {{ $aturanminums->nama_aturan_minum }}</h4>
               </div>
               <div class="modal-body">
               
-            <form role="form" method="post" action="{{route('editObat', $obats->id)}}">
+            <form role="form" method="post" action="{{route('editAturanMinum', $aturanminums->id)}}">
               @method('PATCH')
               {{csrf_field()}}
                 <!-- text input -->
                 <div class="form-group">
-                  <label>Obat :</label>
-                  <input type="text" name="nama_obat" value="{{ $obats->nama_obat }}" class="form-control" placeholder="Obat ..." required>
+                  <label>Aturan Minum :</label>
+                  <input type="text" name="nama_aturan_minum" value="{{ $aturanminums->nama_aturan_minum }}" class="form-control" placeholder="Aturan Minum ..." required>
                 </div>
-                <div class="form-group">
-                  <label>Stok Obat :</label>
-                  <input type="number" name="stok" value="{{ $obats->stok }}" class="form-control" placeholder="Stok Obat ..." required>
-                </div>
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-fw fa-close"></i>Batal</button>
@@ -134,18 +125,18 @@
 @endforeach
 
 
-@foreach($obat as $obats)
-        <div class="modal fade" id="modal-default2-{{ $obats->id }}">
+@foreach($aturanminum as $aturanminums)
+        <div class="modal fade" id="modal-default2-{{ $aturanminums->id }}">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Hapus Data : {{ $obats->nama_obat }}</h4>
+                <h4 class="modal-title">Hapus Data : {{ $aturanminums->nama_aturan_minum }}</h4>
               </div>
               <div class="modal-body">
                 
-            <form role="form" method="post" action="{{route('hapusObat', $obats->id)}}">
+            <form role="form" method="post" action="{{route('hapusAturanMinum', $aturanminums->id)}}">
              @method('DELETE')
              {{csrf_field()}}
 
@@ -163,7 +154,7 @@
           <!-- /.modal-dialog -->
         </div>
         <!-- /.modal -->
-@endforeach 
+@endforeach        
 
 
 </section>

@@ -12,7 +12,7 @@
 @endsection
 
 @section('breadcrumb')
-  <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+  <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
   <li class="active">Label</li>
 @endsection
 
@@ -27,13 +27,13 @@
 @section('main')
     <!-- Main content -->
     <section class="content container-fluid">
-
+    @include('pesan')
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
         <!-- /.box -->
           <!-- general form elements disabled -->
-          <div class="box box-warning">
+          <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Data Pasien</h3>
             </div>
@@ -205,11 +205,9 @@
                 <div class="box-footer">
                     <button type="button" name="add" id="add" class="btn btn-success">Tambah Label Baru dengan Orang Sama</button>
                     <button style="float:right;" type="submit" id="submit" class="btn btn-primary float-left">Cetak</button>
+
                 </div>
               </div>
-
-
-
 
 
 
