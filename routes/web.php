@@ -23,7 +23,9 @@ Route::get('cetak/{data}','PrintController@cetak')->name('toAnotherController');
 Route::get('templet','PrintController@templet');
 
 Route::get('/', 'LabelController@dataLabel')->name('label');
+Route::get('labelobatluar', 'LabelController@dataLabelObatLuar')->name('labelObatLuar');
 Route::post('tambah_label', 'LabelController@tambahLabel')->name('tambahLabel');
+Route::post('tambah_label_obat_luar', 'LabelController@tambahLabelObatLuar')->name('tambahLabelObatLuar');
 
 Route::get('obat', 'ObatController@dataObat')->name('obat');
 Route::post('tambah_obat', 'ObatController@tambahObat')->name('tambahObat');

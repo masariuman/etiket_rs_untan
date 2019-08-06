@@ -1,19 +1,19 @@
 @extends('tenpureto.beken.index')
 
 @section('seo-title')
-	Label Obat Dalam
+	Label Obat Luar
 @endsection
 
 @section('title')
   <h1>
-   Label Obat Dalam
+    Label Obat Luar
     <small>Farmasi</small>
   </h1>
 @endsection
 
 @section('breadcrumb')
   <li><a href="#"><i class="fa fa-ticket"></i> Label</a></li>
-  <li class="active">Label Obat Dalam</li>
+  <li class="active">Label Obat Luar</li>
 @endsection
 
 @push('css')
