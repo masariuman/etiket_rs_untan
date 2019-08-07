@@ -152,7 +152,7 @@
                                 <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Rute Pemberian :</label>
-                                    <select name="rows[0][rute_pemberian]" class="form-control" placeholder="Nama Obat/Dosis ...">
+                                    <select name="rows[0][rute_pemberian]" class="form-control" placeholder="Rute Pemberian ...">
                                     @foreach($rutepemberian as $rutepemberians)    
                                     <option>{{ $rutepemberians->nama_rute_pemberian}}</option>
                                     @endforeach
@@ -203,8 +203,8 @@
                     </tr>
                 </table>
                 <div class="box-footer">
-                    <button type="button" name="add" id="add" class="btn btn-success">Tambah Label Baru dengan Orang Sama</button>
-                    <button style="float:right;" type="submit" id="submit" class="btn btn-primary float-left">Cetak</button>
+                    <button type="button" name="add" id="add" class="btn btn-success"><i class="fa fa-fw fa-user-plus"></i>Tambah Label Baru dengan Orang Sama</button>
+                    <button style="float:right;" type="submit" id="submit" class="btn btn-primary float-left"><i class="fa fa-fw fa-print"></i>Cetak</button>
 
                 </div>
               </div>

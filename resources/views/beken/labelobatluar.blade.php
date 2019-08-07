@@ -49,7 +49,7 @@
                     <tr>
                         <td>
                             <!-- text input -->
-                            <div class="row">   <!-- row -->
+                            <div class="row"><!-- row -->
                                 <div class="col-md-6">
                                 <div class="form-group">
                                     <label>No RM :</label>
@@ -83,10 +83,21 @@
                                 </div>
 
 
-                                <div class="col-md-6">
+                                <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Jumlah :</label>
                                     <input type="number" name="rows[0][jumlah]" class="form-control" placeholder="Jumlah ...">
+                                </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <select name="rows[0][rute_pemberian]" class="form-control" placeholder="Rute Pemberian ...">
+                                    @foreach($rutepemberian as $rutepemberians)    
+                                    <option>{{ $rutepemberians->nama_rute_pemberian}}</option>
+                                    @endforeach
+                                    </select>
                                 </div>
                                 </div>
 
@@ -134,13 +145,18 @@
                                 </div>
                                 </div>
 
-                                <div class="col-md-6">
+
+                                <div class="col-md-2">
                                 <div class="form-group">
-                                    <label>Maksimal Pemberian :</label>
-                                    <select name="rows[0][maksimal]" class="form-control" placeholder="Maksimal Pemberian ...">
-                                   @foreach($maxpemberian as $maxpemberians)
-                                    <option>{{$maxpemberians->nama_max_pemberian}}</option>
-                                   @endforeach
+                                    <label>x :</label>
+                                    <input type="number" name="rows[0][note_x]" class="form-control" placeholder="x ...">
+                                </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Note Tambahan :</label>
+                                    <input type="text" name="rows[0][note_text]" class="form-control" placeholder="Catatan ...">
                                 </select>
                                 </div>
                                 </div>
@@ -152,59 +168,29 @@
                                 <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Rute Pemberian :</label>
-                                    <select name="rows[0][rute_pemberian]" class="form-control" placeholder="Nama Obat/Dosis ...">
+                                    <select name="rows[0][rute_pemberian]" class="form-control" placeholder="Rute Pemberian ...">
                                     @foreach($rutepemberian as $rutepemberians)    
                                     <option>{{ $rutepemberians->nama_rute_pemberian}}</option>
                                     @endforeach
                                 </select>
                                 </div>
                                 </div>
-                                <div class="col-md-1">
+                                <div class="col-md-2">
                                 <div class="form-group">
                                     <label>x Sehari :</label>
                                     <input type="number" name="rows[0][aturan_pakai]" class="form-control" placeholder="x Sehari ...">
                                 </div>
                                 </div>
-                                <div class="col-md-1">
-                                <div class="form-group">
-                                    <label>x :</label>
-                                    <input type="number" name="rows[0][aturan_pakai2]" class="form-control" placeholder="x ...">
-                                </div>
-                                </div>
+                        
 
-                                <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Aturan Minum:</label>
-                                    <select name="rows[0][sebelum_sesudah]" class="form-control" placeholder="Aturan Minum ...">
-                                    @foreach($aturanminum as $aturanminums)
-                                    <option>{{ $aturanminums->nama_aturan_minum}}</option>
-                                    @endforeach
-                                </select>
-                                </div>
-                                </div>
+                            </div><!-- row -->
 
-                                </div><!-- row -->
-
-
-                            <div class="row"><!-- row -->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Satuan Obat :</label>
-                                    <select name="rows[0][bentukobat]" class="form-control" placeholder="Satuan Obat ...">
-                                    @foreach($satuanobat as $satuanobats)
-                                    <option>{{ $satuanobats->nama_satuan_obat}}</option>
-                                    @endforeach
-                                </select>
-                                </div>
-                                </div>
-
-                                </div><!-- row -->
                         </td>
                     </tr>
                 </table>
                 <div class="box-footer">
-                    <button type="button" name="add" id="add" class="btn btn-success">Tambah Label Baru dengan Orang Sama</button>
-                    <button style="float:right;" type="submit" id="submit" class="btn btn-primary float-left">Cetak</button>
+                    <button type="button" name="add" id="add" class="btn btn-success"><i class="fa fa-fw fa-user-plus"></i>Tambah Label Baru dengan Orang Sama</button>
+                    <button style="float:right;" type="submit" id="submit" class="btn btn-primary float-left"><i class="fa fa-fw fa-print"></i>Cetak</button>
 
                 </div>
               </div>
