@@ -91,7 +91,7 @@
                     Rute Pemberian
                 </td>
                 <td colspan="3">
-                    : ROUTE ?
+                : {{$label->rute_pemberian}}
                 </td>
             </tr>
             <tr>

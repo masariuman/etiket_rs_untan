@@ -31,10 +31,22 @@
             <i class="fa fa-dashboard text-aqua"></i> <span>Beranda</span>
           </a>
         </li> -->
-        <li class="{{ Request::is('/') ? 'active' : '' }}">
+        <!-- <li class="{{ Request::is('/') ? 'active' : '' }}">
           <a href="{{ route('label') }}">
             <i class="fa fa-ticket text-yellow"></i> <span>Label</span>
           </a>
+        </li> -->
+        <li class="treeview {{ Request::is('/') ? 'active' : '' }} {{ Request::is('labelobatluar') ? 'active' : '' }}">
+          <a href="#">
+            <i class="fa fa-ticket text-yellow"></i> <span>Label</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ route('label') }}"><i class="fa fa-circle-o"></i> Label Obat Dalam</a></li>
+            <li class="{{ Request::is('labelobatluar') ? 'active' : '' }}"><a href="{{ route('labelObatLuar') }}"><i class="fa fa-circle-o"></i> Label Obat Luar</a></li>
+          </ul>
         </li>
         <li class="{{ Request::is('obat') ? 'active' : '' }}">
           <a href="{{ route('obat') }}">
@@ -66,6 +78,9 @@
             <i class="fa fa-info-circle text-red"></i> <span>Aturan Minum</span>
           </a>
         </li>
+
+
+        
         <!-- <li class="treeview {{ Request::is('manage/karyawan') ? 'active' : '' }} {{ Request::is('manage/karyawan/new') ? 'active' : '' }} {{ Request::is('manage/karyawan/edit') ? 'active' : '' }}">
           <a href="#">
             <i class="fa fa-users"></i> <span>Karyawan</span>
