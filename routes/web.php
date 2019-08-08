@@ -17,6 +17,7 @@
 
 
 Route::get('print','PrintController@generatePDF')->name('cetak');
+Route::get('printobatluar','PrintController@generatePDFobatLuar')->name('cetakObatLuar');
 
 Route::get('cetak/{data}','PrintController@cetak')->name('toAnotherController');
 
@@ -56,4 +57,6 @@ Route::get('aturanminum', 'AturanMinumController@dataAturanMinum')->name('aturan
 Route::post('tambah_aturanminum', 'AturanMinumController@tambahAturanMinum')->name('tambahAturanMinum');
 Route::patch('edit_aturanminum/{id}', 'AturanMinumController@editAturanMinum')->name('editAturanMinum');
 Route::delete('hapus_aturanminum/{id}', 'AturanMinumController@hapusAturanMinum')->name('hapusAturanMinum');
+
+
 

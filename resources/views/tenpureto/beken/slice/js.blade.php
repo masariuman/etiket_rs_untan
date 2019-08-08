@@ -60,7 +60,7 @@
     //   todayHighlight:'TRUE',
     // })
     //Date picker
-    $('.datepicker').datepicker({ format: "yyyy-mm-dd" });
+    $('.datepicker').datepicker({ format: "yyyy-mm-dd", todayHighlight:"true", autoclose: "true" });
 
   });
 </script>

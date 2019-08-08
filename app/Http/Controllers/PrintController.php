@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use PDF;
 use App\Label;
+use App\LabelObatLuar;
 
 class PrintController extends Controller
 {
@@ -100,6 +101,25 @@ class PrintController extends Controller
         $data['today'] = date('d/m/Y');
 
         $pdf = PDF::loadView('print', $data)->setPaper([0,0,141.732,170.079], 'landscape');
+        return $pdf->stream();
+        // return $pdf->download('laporan-pdf.pdf');
+    }
+
+
+    public function generatePDFobatLuar()
+
+    {
+        $label = LabelObatLuar::all()->last();
+        $created_at = $label->created_at;
+        $label2 = LabelObatLuar::where('created_at',$created_at)->get();
+        // dd($label2);
+        $count = count($label2);
+        // $data = ['title' => 'Welcome to belajarphp.net'];
+        $data['label'] = $label2;
+        $data['count'] = $count;
+        $data['today'] = date('d/m/Y');
+
+        $pdf = PDF::loadView('printobatluar', $data)->setPaper([0,0,141.732,170.079], 'landscape');
         return $pdf->stream();
         // return $pdf->download('laporan-pdf.pdf');
     }
