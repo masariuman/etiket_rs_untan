@@ -24,5 +24,5 @@ class LabelObatLuar extends Model
         'jumlah_jenis',
         'nomor_urut_input'
     ];
-    
+
 }

@@ -95,34 +95,42 @@
                 </td>
             </tr>
             <tr>
-                <td class="aturan" colspan="5" style="padding-top:15px;">
-                    {{$label->aturan_pakai}} x Sehari {{$label->aturan_pakai2}} {{$label->bentukobat}}
+                <td class="aturan" colspan="3" style="padding-top:10px;">
+                    Sehari {{$label->x_sehari}} X
                 </td>
-            </tr>
-            <tr>
-                <td class="aturan" colspan="5">
-                    {{$label->sebelum_sesudah}}
-                </td>
-            </tr>
-            <tr>
-                <td class="aturan" colspan="3">
-                    {{$label->maksimal}}
-                </td>
-                <td colspan="2">
+                <td colspan="2" style="padding-top:10px;">
                     ED : {{$label->ed}}
                 </td>
             </tr>
             <tr>
                 <td class="aturan" colspan="3">
-                    {{$label->aturan_pakai3}}
+                    {{$label->per_jam}}
                 </td>
                 <td colspan="2">
-                    Jumlah : {{$label->jumlah}}
+                    Jumlah : {{$label->jumlah}} {{$label->jumlah_jenis}}
                 </td>
             </tr>
             <tr>
-                <td class="aturan" colspan="5" style="text-align:center;padding-top:10px;">
-                    <i>SEMOGA LEKAS SEMBUH</i>
+                <td class="aturan" colspan="5">
+                    @if( !empty($label->note_x))
+                        {{$label->note_x}} X {{$label->note}}
+                    @endif
+                </td>
+                {{-- <td colspan="2">
+                    ED : {{$label->ed}}
+                </td> --}}
+            </tr>
+            {{-- <tr>
+                <td class="aturan" colspan="5">
+                    {{$label->note}}
+                </td> --}}
+                {{-- <td colspan="2">
+                    Jumlah : {{$label->jumlah}} {{$label->jumlah_jenis}}
+                </td> --}}
+            {{-- </tr> --}}
+            <tr>
+                <td class="aturan" colspan="5" style="text-align:center;padding-top:10px;line-height:12px;">
+                    <i>OBAT LUAR</i><br /><i>SEMOGA LEKAS SEMBUH</i>
                 </td>
             </tr>
         </table>

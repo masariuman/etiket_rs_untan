@@ -88,7 +88,7 @@ class LabelController extends Controller
 
 
 
-     
+
     foreach($request->rows as $rows) {
             $tambahLabel = \DB::table('label_obat_luar')->insert([
                 'mr' => $request->mr,
@@ -105,10 +105,10 @@ class LabelController extends Controller
                 'jumlah_jenis' => $rows['jumlah_jenis'],
                 'nomor_urut_input' => $request->input('mr', $request->mr),
             ]);
-        
+
         }
-   
-            return redirect()->route('cetakObatLuar');
+
+            return redirect()->route('cetak_biru');
 
         // return back();
 

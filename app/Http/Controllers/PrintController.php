@@ -107,12 +107,12 @@ class PrintController extends Controller
 
 
 
-    
+
 
     public function generatePDFBiru()
 
     {
-        $label = Label::all()->last();
+        $label = LabelObatLuar::all()->last();
         $created_at = $label->created_at;
         $label2 = LabelObatLuar::where('created_at',$created_at)->get();
         // dd($label2);
