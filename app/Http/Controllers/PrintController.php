@@ -106,10 +106,13 @@ class PrintController extends Controller
     }
 
 
-    public function generatePDFobatLuar()
+
+    
+
+    public function generatePDFBiru()
 
     {
-        $label = LabelObatLuar::all()->last();
+        $label = Label::all()->last();
         $created_at = $label->created_at;
         $label2 = LabelObatLuar::where('created_at',$created_at)->get();
         // dd($label2);
@@ -119,7 +122,10 @@ class PrintController extends Controller
         $data['count'] = $count;
         $data['today'] = date('d/m/Y');
 
-        $pdf = PDF::loadView('printobatluar', $data)->setPaper([0,0,141.732,170.079], 'landscape');
+
+
+        $pdf = PDF::loadView('print_biru', $data)->setPaper([0,0,141.732,170.079], 'landscape');
+
         return $pdf->stream();
         // return $pdf->download('laporan-pdf.pdf');
     }

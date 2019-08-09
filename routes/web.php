@@ -18,6 +18,7 @@
 
 Route::get('print','PrintController@generatePDF')->name('cetak');
 Route::get('printobatluar','PrintController@generatePDFobatLuar')->name('cetakObatLuar');
+Route::get('print_biru','PrintController@generatePDFBiru')->name('cetak_biru');
 
 Route::get('cetak/{data}','PrintController@cetak')->name('toAnotherController');
 
